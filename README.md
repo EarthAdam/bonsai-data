@@ -5,8 +5,11 @@ as opposed to an omnidirectional spread of nodes and edges.
 
 # Tasks to be completed
 Create .txt or .csv reading functionality in Unity so we don't have to manually enter data
+
 Determine standard data format to use between directory scanner and Unity
-Creat directory scanner that has .txt or .csv output
+
+Create directory scanner that has .txt or .csv output
+
 Create procedural modified force-directed visualization code in Unity.
 
 # Initial Goal
