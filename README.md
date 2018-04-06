@@ -1,3 +1,7 @@
+# Documentation
+
+Follow this link to see our Documentation using GitBook: [https://earthadam.gitbooks.io/bonsai-documentation/content/](https://earthadam.gitbooks.io/bonsai-documentation/content/)
+
 # What is the Bonsai Data modeler?
 
 This is an open-source project being developed to visualize ontologies using immersive environments. This is primarily achieved through force-directed graphing, but the technique is modified in order to make the vidualization bi-directional in nature, as opposed to an omnidirectional spread of nodes and edges.
