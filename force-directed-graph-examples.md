@@ -22,7 +22,3 @@
 
 [Gource](http://gource.io/)
 
-Research
-
-
-
