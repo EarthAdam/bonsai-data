@@ -1,10 +1,15 @@
+<<<<<<< HEAD:docs/roadmap.md
 
 
+=======
+>>>>>>> 4e84221e24ecd804ca21dd2087b01e7b5eada1fb:roadmap.md
 # Roadmap
 
 ## Short-Term Goal
 
 Initially we want to be able to visualize the layout of a file directory by loading a log of its layout into Unity. From there, a 3D tree will be built with each branch reflecting each nested folder. The trunk being the root folder for the directory.
+
+![](/assets/img2.png)
 
 ## Mid-Term Goal
 
