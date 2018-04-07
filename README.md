@@ -50,8 +50,6 @@ The standard force-directed graph projects nodes and edges in an omnidirectional
 
 Initially we want to be able to visualize the layout of a file directory by loading a log of its layout into Unity. From there, a 3D tree will be built with each branch reflecting each nested folder. The trunk being the root folder for the directory.
 
-![](/assets/img2.png)
-
 ## Mid-Term Goal
 
 Be able to drop a compiled .exe file into any directory, and upon opening it scans the directory from that location, and creates a 3D tree
