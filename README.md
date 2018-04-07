@@ -28,7 +28,7 @@ Clone this repo and run this using Unity 2017.1 or newer. Press the "Play" butto
 
 [Visualizing 3D Network Topologies Using Unity](http://collaboradev.com/2014/03/12/visualizing-3d-network-topologies-using-unity/)
 
-[Force Directed Node Graph 3D Unity](https://github.com/Bamfax/ForceDirectedNodeGraph3DUnity\)
+[Force Directed Node Graph 3D Unity](https://github.com/Bamfax/ForceDirectedNodeGraph3DUnity)
 
 [Blockchain3D Explorer](http://blockchain3d.info/)
 
