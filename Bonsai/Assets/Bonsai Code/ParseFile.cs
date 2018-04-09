@@ -48,7 +48,12 @@ public class ParseFile : MonoBehaviour {
             fileBranch.SetPosition(1, new Vector3(0, strValues.Length / 1000, 0));
             for (int j = 2; j < fileString.Length; j++)
             {
-                fileBranch.SetPosition(j, new Vector3(i / 100 - strValues.Length / 2 / 100, strValues.Length / 1000*j, 0));
+                //fileBranch.SetPosition(j, new Vector3(i / 100 - strValues.Length / 2 / 100, strValues.Length / 1000*j, 0));
+                fileBranch.SetPosition(j, new Vector3(
+                   100 * Mathf.Sin(i * 4 * Mathf.PI / strValues.Length),
+                   strValues.Length / 1000 * j,
+                   100 * Mathf.Cos(i * 4 * Mathf.PI / strValues.Length)
+               ));
             }
             //Debug.Log(folders);
             //Debug.Log(fileString[0]+','+fileString[1] + ',' + fileString[2]);
