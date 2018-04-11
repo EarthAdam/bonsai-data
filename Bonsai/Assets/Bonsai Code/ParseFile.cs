@@ -1,44 +1,62 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 using System.IO;
 using System;
 
 public class ParseFile : MonoBehaviour {
     private int maxLevels = 0;
+    public float desiredConnectedNodeDistance = 1;
+    public float connectedNodeForce = 1;
+    public float disconnectedNodeForce = 1;
+    public List<Node> nodes;
     // Use this for initialization
     public void Start () {
+        nodes = new List<Node>();
         ParseTxtFile();
 	}
-    public void ParseTxtFile()
+    // Update is called once per frame
+    void Update()
     {
-        string text = File.ReadAllText("../output.txt");
+        ApplyGraphForce();
+        foreach (var node in nodes)
+        {
+            node.position += node.velocity * Time.deltaTime;
+        }
+    }
+    void ParseTxtFile()
+    {
+        string text = File.ReadAllText("../docs/output.txt");
         char[] separators = { ',', ';', '|', '\n' };
         string[] strValues = text.Split(separators);
         int[] sizes = new int[strValues.Length];
         List<string> folders = new List<string>();
-        bool newParent = true;
-
         for (int i = 0; i < strValues.Length; i++)
         {
             string[] lineValues = strValues[i].Split('\t');                 //Break up string by tab separators
             sizes[i] = Convert.ToInt32(lineValues[0]);                      //Save file size
             string[] fileString = lineValues[1].Split('/');                 //break apart file path by '/' marks
-            if (fileString.Length > maxLevels)
-                maxLevels = fileString.Length;                              //Keep track of the max number of folders for the entire directory
             string[] parentFolder = new string[fileString.Length];          //Creates an array for the parent folder
-            Array.Copy(fileString, parentFolder, fileString.Length - 1);
-            //fileString.Copy(parentFolder, fileString.Length - 2);         //Copies everything before the last '/' in the file path
+            Array.Copy(fileString, parentFolder, fileString.Length - 1);    //Copies everything before the last '/' in the file path
+            folders.Add(string.Join("", parentFolder));
+            nodes.Add(new Node()
+            {
+                pathName = string.Join("", fileString),
+                children = nodes.Where(node => node.pathName == string.Join("", parentFolder)).ToList(),
+                position = UnityEngine.Random.insideUnitSphere * 10,
+                velocity = Vector3.zero
+            });
             if (folders.Contains(string.Join("", parentFolder)) != true)    //If the parent folder doesn't exist
             {
-                //string.Join("", newArray);                                
-                folders.Add(string.Join("", parentFolder));                 //Add parent folder path to list of parent folders
-                newParent = true;                                           //Will tell the lineRenderer to create new parent node later
+                nodes.Add(new Node()
+                {
+                    pathName = string.Join("", parentFolder),
+                    position = UnityEngine.Random.insideUnitSphere * 10,
+                    velocity = Vector3.zero
+                });
             }
-            else
-                newParent = false;                                          //Will tell the lineRenderer to go to existing node later
-            Debug.Log(lineValues[1]+','+newParent); 
-
+            /*
             GameObject lineObject = new GameObject(lineValues[1]);
             LineRenderer fileBranch = lineObject.AddComponent<LineRenderer>();
             fileBranch.startWidth = Mathf.Log10(sizes[i])/10;
@@ -50,33 +68,60 @@ public class ParseFile : MonoBehaviour {
             {
                 //fileBranch.SetPosition(j, new Vector3(i / 100 - strValues.Length / 2 / 100, strValues.Length / 1000*j, 0));
                 fileBranch.SetPosition(j, new Vector3(
-                   100 * Mathf.Sin(i * 4 * Mathf.PI / strValues.Length),
-                   strValues.Length / 1000 * j,
-                   100 * Mathf.Cos(i * 4 * Mathf.PI / strValues.Length)
-               ));
+                  100 * Mathf.Sin(i * 4 * Mathf.PI / strValues.Length),
+                  strValues.Length / 1000 * j,
+                  100 * Mathf.Cos(i * 4 * Mathf.PI / strValues.Length)
+              ));               
             }
-            //Debug.Log(folders);
-            //Debug.Log(fileString[0]+','+fileString[1] + ',' + fileString[2]);
-            //Debug.Log(sizes[i]);
-            //Debug.Log(fileString.Length);
-            //Next: count the number of times a folder path is repeated for each level
+            */
         }
-        /*foreach (string str in strValues)
-        {
-            
-             
-            
-            //Create New Line
-            //Assign file size to thickness of line
 
-            stringValues.Add(str);
-            Debug.Log(str);
-          
-
-        }*/
     }
-    // Update is called once per frame
-    void Update () {
-		
-	}
+
+    private void ApplyGraphForce()
+    {
+        foreach (var node in nodes)
+        {
+            var disconnectedNodes = nodes.Except(node.children);
+            foreach (var connectedNode in node.children)
+            {
+                var difference = node.position - connectedNode.position;
+                var distance = (difference).magnitude;
+                var appliedForce = connectedNodeForce * Mathf.Log10(distance / desiredConnectedNodeDistance);
+                connectedNode.velocity += appliedForce * Time.deltaTime * difference.normalized;
+            }
+            foreach (var disconnectedNode in disconnectedNodes)
+            {
+                var difference = node.position - disconnectedNode.position;
+                var distance = (difference).magnitude;
+                if (distance != 0)
+                {
+                    var appliedForce = -disconnectedNodeForce / Mathf.Pow(distance, 2);
+                    disconnectedNode.velocity += appliedForce * Time.deltaTime * difference.normalized;
+                }
+            }
+        }
+    }
+    void OnDrawGizmos()
+    {
+        foreach (var node in nodes)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(node.position, 0.125f);
+            Gizmos.color = Color.green;
+            foreach (var connectedNode in node.children)
+            {
+                Gizmos.DrawLine(node.position, connectedNode.position);
+            }
+        }
+    }
+}
+public class Node
+{
+    public string pathName;
+    public string parentName;
+    public Vector3 position;
+    public Vector3 velocity;
+    public List<Node> children;
+
 }

@@ -43,8 +43,8 @@ public class BiDirectionalForceDirectedGraph : MonoBehaviour {
                 var distance = (difference).magnitude;
                 if (distance != 0)
                 {
-                    var appliedForce = disconnectedNodeForce / Mathf.Pow(distance, 2);
-                    disconnectedNode.velocity += appliedForce * Time.deltaTime * difference.normalized;
+                    var appliedForce = -disconnectedNodeForce / Mathf.Pow(distance, 2);
+                    disconnectedNode.velocity -= appliedForce * Time.deltaTime * difference.normalized;
                 }
             }
         }
@@ -64,10 +64,3 @@ public class BiDirectionalForceDirectedGraph : MonoBehaviour {
     }
 }
 
-public class Node
-{
-    public Vector3 position;
-    public Vector3 velocity;
-    public List<Node> children;
-
-}
