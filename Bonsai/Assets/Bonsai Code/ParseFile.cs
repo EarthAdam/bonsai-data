@@ -37,45 +37,46 @@ public class ParseFile : MonoBehaviour {
             string[] lineValues = strValues[i].Split('\t');                 //Break up string by tab separators
             sizes[i] = Convert.ToInt32(lineValues[0]);                      //Save file size
             string[] fileString = lineValues[1].Split('/');                 //break apart file path by '/' marks
-            string[] parentFolder = new string[fileString.Length];          //Creates an array for the parent folder
-            Array.Copy(fileString, parentFolder, fileString.Length - 1);    //Copies everything before the last '/' in the file path
-            folders.Add(string.Join("", parentFolder));
-            nodes.Add(new Node()
-            {
-                pathName = string.Join("", fileString),
-                children = nodes.Where(node => node.pathName == string.Join("", parentFolder)).ToList(),
-                position = UnityEngine.Random.insideUnitSphere * 10,
-                velocity = Vector3.zero
-            });
-            if (folders.Contains(string.Join("", parentFolder)) != true)    //If the parent folder doesn't exist
+            if (fileString.Length == 1)
             {
                 nodes.Add(new Node()
                 {
-                    pathName = string.Join("", parentFolder),
-                    position = UnityEngine.Random.insideUnitSphere * 10,
+                    pathName = string.Join("", fileString),
+                    position = new Vector3(0, 0, 0),
                     velocity = Vector3.zero
                 });
             }
-            /*
-            GameObject lineObject = new GameObject(lineValues[1]);
-            LineRenderer fileBranch = lineObject.AddComponent<LineRenderer>();
-            fileBranch.startWidth = Mathf.Log10(sizes[i])/10;
-            fileBranch.endWidth = Mathf.Log10(sizes[i])/10;
-            fileBranch.SetVertexCount(fileString.Length);
-            fileBranch.SetPosition(0, new Vector3(0, 0, 0));
-            fileBranch.SetPosition(1, new Vector3(0, strValues.Length / 1000, 0));
-            for (int j = 2; j < fileString.Length; j++)
+            else
             {
-                //fileBranch.SetPosition(j, new Vector3(i / 100 - strValues.Length / 2 / 100, strValues.Length / 1000*j, 0));
-                fileBranch.SetPosition(j, new Vector3(
-                  100 * Mathf.Sin(i * 4 * Mathf.PI / strValues.Length),
-                  strValues.Length / 1000 * j,
-                  100 * Mathf.Cos(i * 4 * Mathf.PI / strValues.Length)
-              ));               
+                string[] parentFolder = new string[fileString.Length];          //Creates an array for the parent folder
+                Array.Copy(fileString, parentFolder, fileString.Length - 1);    //Copies everything before the last '/' in the file path
+                nodes.Add(new Node()
+                {
+                    pathName = string.Join("", fileString),
+                    parentName = string.Join("", parentFolder),
+                    position = UnityEngine.Random.insideUnitSphere * 10 + new Vector3(0, 5, 0),
+                    velocity = Vector3.zero,
+                    //children = string.Join("", parentFolder).ToList()
+                });
+                Debug.Log(nodes[i].pathName+','+nodes[i].children);
             }
-            */
         }
-
+        /*
+        foreach(var node in nodes)
+        {
+            node.children = nodes.Where(node.pathName==node.parentName)
+        }
+        for (int i = 0; i < strValues.Length; i++)
+        {
+            string[] fileString = nodes[i].pathName.Split('/');                 //break apart file path by '/' marks
+            string[] parentFolder = new string[fileString.Length];          //Creates an array for the parent folder
+            Array.Copy(fileString, parentFolder, fileString.Length - 1);
+            foreach(var node in nodes)
+            {
+                if (nodes[i].pathName == node.parentName)
+                    nodes[i].children = node.parentName;// s.Where(node => node.pathName == string.Join("", parentFolder)).ToList();
+            }
+        }*/
     }
 
     private void ApplyGraphForce()

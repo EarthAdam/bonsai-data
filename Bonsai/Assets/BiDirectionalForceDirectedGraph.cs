@@ -13,7 +13,10 @@ public class BiDirectionalForceDirectedGraph : MonoBehaviour {
         nodes = new List<Node>();
 		for (int i = 0; i < 20; i++)
         {
-            nodes.Add(new Node() { children = nodes.Where(node => Random.value > 0.5f).ToList(), position = Random.insideUnitSphere*10,velocity=Vector3.zero});
+            nodes.Add(new Node() {
+                children = nodes.Where(node => Random.value > 0.5f).ToList(),
+                position = Random.insideUnitSphere*10,
+velocity=Vector3.zero});
         }
 	}
 	
