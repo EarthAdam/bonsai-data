@@ -19,15 +19,15 @@ public class ParseFile : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        ApplyGraphForce();
-        foreach (var node in nodes)
-        {
-            node.position += node.velocity * Time.deltaTime;
-        }
+        //ApplyGraphForce();
+        //foreach (var node in nodes)
+        //{
+        //    node.position += node.velocity * Time.deltaTime;
+        //}
     }
     void ParseTxtFile()
     {
-        string text = File.ReadAllText("../docs/output.txt");
+        string text = File.ReadAllText("../output.txt");
         char[] separators = { ',', ';', '|', '\n' };
         string[] strValues = text.Split(separators);
         int[] sizes = new int[strValues.Length];
@@ -36,7 +36,10 @@ public class ParseFile : MonoBehaviour {
         {
             string[] lineValues = strValues[i].Split('\t');                 //Break up string by tab separators
             sizes[i] = Convert.ToInt32(lineValues[0]);                      //Save file size
-            string[] fileString = lineValues[1].Split('/');                 //break apart file path by '/' marks
+            string[] fileString = lineValues[1].Split('/');
+            string[] parentFolder = new string[fileString.Length];          //Creates an array for the parent folder
+            Array.Copy(fileString, parentFolder, fileString.Length - 1);
+            /*//break apart file path by '/' marks
             if (fileString.Length == 1)
             {
                 nodes.Add(new Node()
@@ -59,6 +62,22 @@ public class ParseFile : MonoBehaviour {
                     //children = string.Join("", parentFolder).ToList()
                 });
                 Debug.Log(nodes[i].pathName+','+nodes[i].children);
+            }*/
+            GameObject lineObject = new GameObject(lineValues[1]);
+            LineRenderer fileBranch = lineObject.AddComponent<LineRenderer>();
+            fileBranch.startWidth = Mathf.Log10(sizes[i]) / 10;
+            fileBranch.endWidth = Mathf.Log10(sizes[i]) / 10;
+            fileBranch.SetVertexCount(fileString.Length);
+            fileBranch.SetPosition(0, new Vector3(0, 0, 0));
+            fileBranch.SetPosition(1, new Vector3(0, strValues.Length / 1000, 0));
+            for (int j = 2; j < fileString.Length; j++)
+            {
+                //fileBranch.SetPosition(j, new Vector3(i / 100 - strValues.Length / 2 / 100, strValues.Length / 1000*j, 0));
+                fileBranch.SetPosition(j, new Vector3(
+                   100 * Mathf.Sin(i * 4 * Mathf.PI / strValues.Length),
+                   strValues.Length / 1000 * j,
+                   100 * Mathf.Cos(i * 4 * Mathf.PI / strValues.Length)
+               ));
             }
         }
         /*
