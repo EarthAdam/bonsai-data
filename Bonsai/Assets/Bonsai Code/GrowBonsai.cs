@@ -1436,13 +1436,13 @@ public class GrowBonsai : MonoBehaviour
         rend.material.color = color1;
         rend.material.SetColor("_EmissionColor", color1);
 
-        branchname1.GetComponent<BonsaiLabel>().start = root;
-        branchname1.GetComponent<BonsaiLabel>().stop = branch;
+        //branchname1.GetComponent<BonsaiLabel>().start = root;
+        //branchname1.GetComponent<BonsaiLabel>().stop = branch;
         TextMesh text1 = branchname1.GetComponent<TextMesh>();
         text1.text = name;
 
-        costname1.GetComponent<CostLabel>().start = root;
-        costname1.GetComponent<CostLabel>().stop = branch;
+        //costname1.GetComponent<CostLabel>().start = root;
+        //costname1.GetComponent<CostLabel>().stop = branch;
         TextMesh cost1 = costname1.GetComponent<TextMesh>();
         cost1.text = cost;
 

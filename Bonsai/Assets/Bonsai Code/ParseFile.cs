@@ -15,15 +15,15 @@ public class ParseFile : MonoBehaviour {
     public void Start () {
         nodes = new List<Node>();
         ParseTxtFile();
-	}
+    }
     // Update is called once per frame
     void Update()
     {
-        //ApplyGraphForce();
-        //foreach (var node in nodes)
-        //{
-        //    node.position += node.velocity * Time.deltaTime;
-        //}
+        ApplyGraphForce();
+        foreach (var node in nodes)
+        {
+            node.position += node.velocity * Time.deltaTime;
+        }
     }
     void ParseTxtFile()
     {
@@ -39,7 +39,7 @@ public class ParseFile : MonoBehaviour {
             string[] fileString = lineValues[1].Split('/');
             string[] parentFolder = new string[fileString.Length];          //Creates an array for the parent folder
             Array.Copy(fileString, parentFolder, fileString.Length - 1);
-            /*//break apart file path by '/' marks
+            //break apart file path by '/' marks
             if (fileString.Length == 1)
             {
                 nodes.Add(new Node()
@@ -51,7 +51,7 @@ public class ParseFile : MonoBehaviour {
             }
             else
             {
-                string[] parentFolder = new string[fileString.Length];          //Creates an array for the parent folder
+                //string[] parentFolder = new string[fileString.Length];          //Creates an array for the parent folder
                 Array.Copy(fileString, parentFolder, fileString.Length - 1);    //Copies everything before the last '/' in the file path
                 nodes.Add(new Node()
                 {
@@ -62,28 +62,12 @@ public class ParseFile : MonoBehaviour {
                     //children = string.Join("", parentFolder).ToList()
                 });
                 Debug.Log(nodes[i].pathName+','+nodes[i].children);
-            }*/
-            GameObject lineObject = new GameObject(lineValues[1]);
-            LineRenderer fileBranch = lineObject.AddComponent<LineRenderer>();
-            fileBranch.startWidth = Mathf.Log10(sizes[i]) / 10;
-            fileBranch.endWidth = Mathf.Log10(sizes[i]) / 10;
-            fileBranch.SetVertexCount(fileString.Length);
-            fileBranch.SetPosition(0, new Vector3(0, 0, 0));
-            fileBranch.SetPosition(1, new Vector3(0, strValues.Length / 1000, 0));
-            for (int j = 2; j < fileString.Length; j++)
-            {
-                //fileBranch.SetPosition(j, new Vector3(i / 100 - strValues.Length / 2 / 100, strValues.Length / 1000*j, 0));
-                fileBranch.SetPosition(j, new Vector3(
-                   100 * Mathf.Sin(i * 4 * Mathf.PI / strValues.Length),
-                   strValues.Length / 1000 * j,
-                   100 * Mathf.Cos(i * 4 * Mathf.PI / strValues.Length)
-               ));
             }
         }
         /*
         foreach(var node in nodes)
         {
-            node.children = nodes.Where(node.pathName==node.parentName)
+            node.children = nodes.Where(node.pathName == node.parentName);
         }
         for (int i = 0; i < strValues.Length; i++)
         {
@@ -97,7 +81,6 @@ public class ParseFile : MonoBehaviour {
             }
         }*/
     }
-
     private void ApplyGraphForce()
     {
         foreach (var node in nodes)
