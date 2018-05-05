@@ -63,15 +63,20 @@ public class ParseFile : MonoBehaviour {
     }
     void PopulateNodes()
     {
-        Debug.Log("The PopulateNodes() script started");
         foreach (var node in nodes)
         {
             node.sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
             node.sphere.name = node.pathName;
             node.sphere.AddComponent<Rigidbody>();
-            node.sphere.AddComponent<SpringJoint>();
             node.sphere.transform.position = node.position;
-            Debug.Log(node.pathName + " sphere created.");
+            if (node.parentName != "base")
+            {
+                //node.sphere.AddComponent<SpringJoint>();
+            }
+            else
+            {
+                node.sphere.GetComponent<Rigidbody>().isKinematic = true;
+            }
         }
     }
     void FindParents()
@@ -82,20 +87,35 @@ public class ParseFile : MonoBehaviour {
             if (node.parentName != "base")
             {
                 Debug.Log("This node is not the base");
-                //SpringJoint localSpring = node.sphere.GetComponent<SpringJoint>();
-                node.sphere.GetComponent<SpringJoint>().connectedBody = nodes.Find(i => i.pathName == node.parentName).sphere.GetComponent<Rigidbody>();
-                Debug.Log("I think we've successfully found the node's SpringJoint");
-                //localSpring.connectedBody = nodes.Find(i => i.pathName == node.parentName).sphere.GetComponent<Rigidbody>();
-                //node.parent = nodes.Find(i => i.pathName == node.parentName).sphere;
-                Debug.Log("Parent node was found");
                 LineRenderer branch = node.sphere.AddComponent<LineRenderer>();
                 branch.SetPosition(0, node.sphere.transform.position);
-                branch.SetPosition(1, node.parent.transform.position);
-                Debug.Log(node.pathName + " parent found");
+                branch.SetPosition(1, new Vector3(0,0,0));
+                //node.parent = GameObject.Find(node.parentName).GetComponent<Rigidbody>();
+                Debug.Log("Line Added");
+                Debug.Log(node.pathName);
+                Debug.Log(node.parentName);
+                String tempName = node.parentName;
+                //IEnumerable<Node> localParent = nodes.Where(node => node.pathName == tempName);
+                Debug.Log("This is what I think should be the parent name: "+ nodes.Where(i => i.pathName == node.parentName));
+                //Debug.Log("This is what I think should be the parent name: " + nodes.Find(j => j.pathName == node.parentName).parent);
+
+                //SpringJointlocal node.sphere.GetComponent<SpringJoint>().connectedBody = nodes.Find(i => i.pathName == node.parentName).sphere.GetComponent<Rigidbody>();
+                SpringJoint localSpring = node.sphere.AddComponent<SpringJoint>();
+                Debug.Log("SpringJoint Added");
+
+                //node.sphere.GetComponent<SpringJoint>().connectedBody = nodes.Find(i => i.pathName == node.parentName).sphere.GetComponent<Rigidbody>();
+                Debug.Log("I think we've successfully found the node's SpringJoint");
+                //localSpring.connectedBody.position = nodes.Where(i => i.pathName == node.parentName).transform.position;// GetComponent<Rigidbody>();
+                
+                //Debug.Log("Parent node was found");
+                
+                //Debug.Log(node.pathName + " parent found");
             }
             else
             {
                 Debug.Log("This node is the base");
+                Debug.Log(node.pathName);
+                Debug.Log(node.parentName);
             }
         }
     }
@@ -103,10 +123,9 @@ public class ParseFile : MonoBehaviour {
 public class Node
 {
     public GameObject sphere;
-    public GameObject parent;
+    public Rigidbody parent;
     public string pathName;
     public string parentName;
     public Vector3 position;
     public List<Node> children;
-
 }
