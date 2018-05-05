@@ -36,14 +36,10 @@ public class ParseFile : MonoBehaviour {
         {
             string[] lineValues = strValues[i].Split('\t');                 //Break up string by tab separators
             sizes[i] = Convert.ToInt32(lineValues[0]);                      //Save file size
-<<<<<<< HEAD
             string[] fileString = lineValues[1].Split('/');
             string[] parentFolder = new string[fileString.Length];          //Creates an array for the parent folder
             Array.Copy(fileString, parentFolder, fileString.Length - 1);
             //break apart file path by '/' marks
-=======
-            string[] fileString = lineValues[1].Split('/');                 //break apart file path by '/' marks
->>>>>>> parent of 679d57a... Combined circular file graph with fake tree
             if (fileString.Length == 1)
             {
                 nodes.Add(new Node()
