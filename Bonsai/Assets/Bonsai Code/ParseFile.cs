@@ -11,12 +11,13 @@ public class ParseFile : MonoBehaviour {
     public float connectedNodeForce = 1;
     public float disconnectedNodeForce = 1;
     public List<Node> nodes;
+    public GameObject nodePrefab;
     // Use this for initialization
     public void Start () {
         nodes = new List<Node>();
         ParseTxtFile();
         PopulateNodes();
-        FindParents();
+        //FindParents();
     }
     // Update is called once per frame
     void Update()
@@ -61,24 +62,22 @@ public class ParseFile : MonoBehaviour {
             }
         }
     }
+    public void AddBranch(GameObject prefab, string branchName, string parentName, Transform branchTX)
+    {
+        Instantiate(prefab,branchTX);
+        //prefab.GetComponent<SpringJoint>().connectedBody = GameObject.Find(parentName).GetComponent<Rigidbody>();
+        //prefab.GetComponent<LineRenderer>().SetPosition(0,GameObject.Find(parentName).GetComponent<Rigidbody>().transform.position);
+    }
     void PopulateNodes()
     {
         foreach (var node in nodes)
         {
-            node.sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-            node.sphere.name = node.pathName;
-            node.sphere.AddComponent<Rigidbody>();
-            node.sphere.transform.position = node.position;
-            if (node.parentName != "base")
-            {
-                //node.sphere.AddComponent<SpringJoint>();
-            }
-            else
-            {
-                node.sphere.GetComponent<Rigidbody>().isKinematic = true;
-            }
+            GameObject newBranch = Instantiate(nodePrefab);
+            newBranch.name = node.pathName;
+            //newBranch.GetComponent<SpringJoint>().connectedBody = GameObject.Find(node.parentName).GetComponent<Rigidbody>();
+            //AddBranch(nodePrefab,node.pathName,node.parentName,node.sphere.transform);
         }
-    }
+    }/*
     void FindParents()
     {
         Debug.Log("The FindParents() script started");
@@ -118,7 +117,7 @@ public class ParseFile : MonoBehaviour {
                 Debug.Log(node.parentName);
             }
         }
-    }
+    }*/
 }
 public class Node
 {
