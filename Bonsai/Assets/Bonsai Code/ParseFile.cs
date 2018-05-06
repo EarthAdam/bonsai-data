@@ -40,8 +40,8 @@ public class ParseFile : MonoBehaviour {
             {
                 nodes.Add(new Node()
                 {
-                    pathName = string.Join("", fileString),
-                    parentName = "base",
+                    pathName = lineValues[1],
+                    parentName = "Base",
                     position = new Vector3(0, 0, 0)
                 });
                 //Debug.Log(nodes[i].pathName + ',' + nodes[i].parentName);
@@ -53,12 +53,12 @@ public class ParseFile : MonoBehaviour {
                 Array.Copy(fileString, parentFolder, fileString.Length - 1);    //Copies everything before the last '/' in the file path
                 nodes.Add(new Node()
                 {
-                    pathName = string.Join("", fileString),
-                    parentName = string.Join("", parentFolder),
+                    pathName = lineValues[1],
+                    parentName = string.Join("/", parentFolder).TrimEnd('/'),
                     position = UnityEngine.Random.insideUnitSphere * 10 + new Vector3(0, 5, 0)
                     //children = string.Join("", parentFolder).ToList()
                 });
-                //Debug.Log(nodes[i].pathName+','+nodes[i].parentName);
+                //Debug.Log(string.Join("/", parentFolder).TrimEnd('/'));
             }
         }
     }
@@ -74,6 +74,8 @@ public class ParseFile : MonoBehaviour {
         {
             GameObject newBranch = Instantiate(nodePrefab);
             newBranch.name = node.pathName;
+            newBranch.GetComponent<Forces>().parentName = node.parentName;
+            newBranch.GetComponent<Forces>().parent = GameObject.Find(node.parentName);
             //newBranch.GetComponent<SpringJoint>().connectedBody = GameObject.Find(node.parentName).GetComponent<Rigidbody>();
             //AddBranch(nodePrefab,node.pathName,node.parentName,node.sphere.transform);
         }
@@ -122,7 +124,7 @@ public class ParseFile : MonoBehaviour {
 public class Node
 {
     public GameObject sphere;
-    public Rigidbody parent;
+    public GameObject parent;
     public string pathName;
     public string parentName;
     public Vector3 position;
