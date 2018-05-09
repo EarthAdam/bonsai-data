@@ -22,14 +22,6 @@ public class ParseFile : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-<<<<<<< HEAD
-=======
-        ApplyGraphForce();
-        foreach (var node in nodes)
-        {
-            node.position += node.velocity * Time.deltaTime;
-        }
->>>>>>> parent of 679d57a... Combined circular file graph with fake tree
     }
     void ParseTxtFile()
     {
@@ -66,11 +58,7 @@ public class ParseFile : MonoBehaviour {
                     position = UnityEngine.Random.insideUnitSphere * 10 + new Vector3(0, 5, 0)
                     //children = string.Join("", parentFolder).ToList()
                 });
-<<<<<<< HEAD
-                //Debug.Log(string.Join("/", parentFolder).TrimEnd('/'));
-=======
                 Debug.Log(nodes[i].pathName+','+nodes[i].children);
->>>>>>> parent of 679d57a... Combined circular file graph with fake tree
             }
         }
     }
