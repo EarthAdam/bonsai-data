@@ -146,20 +146,20 @@ public class ParseFile : MonoBehaviour {
             //rend.material.SetColor("_EmissionColor", color1);
             for (int j = 2; j < fileString.Length; j++)
             {
-                if(lineValues[1].Substring(lineValues[1].Length - 4) == "meta")
+                /*if(lineValues[1].Substring(lineValues[1].Length - 4) == "meta")
                 {
                     fileBranch.SetPosition(j, new Vector3(i / 100 - strValues.Length / 2 / 100, strValues.Length / 1000 * j, 20));
                 }
                 else 
                 {
                     fileBranch.SetPosition(j, new Vector3(i / 100 - strValues.Length / 2 / 100, strValues.Length / 1000 * j, 0));
-                }
+                }*/
 
-                //fileBranch.SetPosition(j, new Vector3(
-                //   100 * Mathf.Sin(i * 4 * Mathf.PI / strValues.Length),
-                //   strValues.Length / 1000 * j,
-                //   100 * Mathf.Cos(i * 4 * Mathf.PI / strValues.Length)
-                //));
+                fileBranch.SetPosition(j, new Vector3(
+                   100 * Mathf.Sin(i * 4 * Mathf.PI / strValues.Length),
+                   strValues.Length / 1000 * j,
+                   100 * Mathf.Cos(i * 4 * Mathf.PI / strValues.Length)
+                ));
             }
         }
         /*
