@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Linq;
 using System.IO;
 using System;
+using System.Text.RegularExpressions;
 
 public class ParseFile : MonoBehaviour {
     private int maxLevels = 0;
@@ -30,6 +31,7 @@ public class ParseFile : MonoBehaviour {
         string text = File.ReadAllText("../output.txt");
         char[] separators = { ',', ';', '|', '\n' };
         string[] strValues = text.Split(separators);
+
         int[] sizes = new int[strValues.Length];
         List<string> folders = new List<string>();
         for (int i = 0; i < strValues.Length; i++)
@@ -39,7 +41,7 @@ public class ParseFile : MonoBehaviour {
             string[] fileString = lineValues[1].Split('/');
             string[] parentFolder = new string[fileString.Length];          //Creates an array for the parent folder
             Array.Copy(fileString, parentFolder, fileString.Length - 1);
-            /*//break apart file path by '/' marks
+            /*break apart file path by '/' marks
             if (fileString.Length == 1)
             {
                 nodes.Add(new Node()
