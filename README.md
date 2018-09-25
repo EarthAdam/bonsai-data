@@ -14,7 +14,13 @@ The Bonsai Data project that originally started at the 2016 MIT Reality Virtuall
 
 # Tutorial
 
-Clone this repo and run this using Unity 2017.1 or newer. Press the "Play" button, and use your mouse to navigate the camera around the tree.
+1. Create a directory list of a directory you would like to visualize. 
+
+   In CMD, navigate to the directory you want to visualize, and then enter in this line of code: `ls -s -R > out.txt`
+   
+2. Clone this repo to a new folder (`git clone git@github.com:OhioAdam/bonsai-data.git` in cmd)
+3. Relocate the **out.txt** file that you created in step 1 into this new folder
+4. Run this using Unity 2017.1 or newer. Press the "Play" button, and use your mouse to navigate the camera around the tree.
 
 # Force Directed Graphing
 
