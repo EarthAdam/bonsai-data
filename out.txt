@@ -19,7 +19,7 @@ total 384
   4 img2.png.meta
 
 ./Bonsai:
-total 704
+total 712
  40 Assets/
  52 Bonsai.csproj
  44 Bonsai.Editor.csproj
@@ -29,69 +29,69 @@ total 704
 436 output.txt
   4 Packages/
   8 ProjectSettings/
- 16 Temp/
+ 24 Temp/
  48 Unity.PackageManagerUI.Editor.csproj
  40 UnityEditor.StandardEvents.csproj
   0 UnityPackageManager/
 
 ./Bonsai/Assets:
 total 2061
-   4 1st layer.mat
-   1 1st layer.mat.meta
-   4 2nd layer.mat
-   1 2nd layer.mat.meta
-   4 3rd layer.mat
-   1 3rd layer.mat.meta
-   4 4th layer.mat
-   1 4th layer.mat.meta
-   4 5th layer.mat
-   1 5th layer.mat.meta
+   4 1st_layer.mat
+   1 1st_layer.mat.meta
+   4 2nd_layer.mat
+   1 2nd_layer.mat.meta
+   4 3rd_layer.mat
+   1 3rd_layer.mat.meta
+   4 4th_layer.mat
+   1 4th_layer.mat.meta
+   4 5th_layer.mat
+   1 5th_layer.mat.meta
    4 BiDirectionalForceDirectedGraph.cs
    1 BiDirectionalForceDirectedGraph.cs.meta
-   4 Bonsai Code/
-   1 Bonsai Code.meta
-1340 Bonsai Forest.unity
-   1 Bonsai Forest.unity.meta
   88 Bonsai.prefab
    1 Bonsai.prefab.meta
+   4 Bonsai_Code/
+   1 Bonsai_Code.meta
+1340 Bonsai_Forest.unity
+   1 Bonsai_Forest.unity.meta
   12 Bonsai2.prefab
    1 Bonsai2.prefab.meta
-   1 CostLabel 1.cs
-   1 CostLabel 1.cs.meta
+   1 CostLabel_1.cs
+   1 CostLabel_1.cs.meta
    4 DataGlow.mat
    1 DataGlow.mat.meta
-   4 grass 1.mat
-   1 grass 1.mat.meta
    4 grass.mat
    1 grass.mat.meta
-   4 Green Branch.mat
-   1 Green Branch.mat.meta
-   4 Ground 1.mat
-   1 Ground 1.mat.meta
+   4 grass_1.mat
+   1 grass_1.mat.meta
+   4 Green_Branch.mat
+   1 Green_Branch.mat.meta
    4 Ground.mat
    1 Ground.mat.meta
-   0 laxer Assets/
-   1 laxer Assets.meta
-   4 Lower Class.mat
-   1 Lower Class.mat.meta
-   4 Lower Middle Class.mat
-   1 Lower Middle Class.mat.meta
+   4 Ground_1.mat
+   1 Ground_1.mat.meta
+   0 laxer_Assets/
+   1 laxer_Assets.meta
+   4 Lower_Class.mat
+   1 Lower_Class.mat.meta
+   4 Lower_Middle_Class.mat
+   1 Lower_Middle_Class.mat.meta
    4 NatureStarterKit2/
    1 NatureStarterKit2.meta
    4 NavBasic.cs
    1 NavBasic.cs.meta
-   4 New Material.mat
-   1 New Material.mat.meta
+   4 New_Material.mat
+   1 New_Material.mat.meta
  436 output.txt
    1 output.txt.meta
    8 ParseList.cs
    1 ParseList.cs.meta
    4 PieLineRenderer.cs
    1 PieLineRenderer.cs.meta
-   4 Pink Branch.mat
-   1 Pink Branch.mat.meta
-   0 Planet Earth/
-   1 Planet Earth.meta
+   4 Pink_Branch.mat
+   1 Pink_Branch.mat.meta
+   0 Planet_Earth/
+   1 Planet_Earth.meta
    1 ProceduralTree.cs
    1 ProceduralTree.cs.meta
    1 RepulsiveForce.cs
@@ -104,26 +104,26 @@ total 2061
    1 RingRenderer.cs.meta
    4 ScanDirectory.cs
    1 ScanDirectory.cs.meta
-   8 Scatter Plot.unity
-   1 Scatter Plot.unity.meta
+   8 Scatter_Plot.unity
+   1 Scatter_Plot.unity.meta
    4 ScatterPlot.cs
    1 ScatterPlot.cs.meta
    4 Skyboxes/
    1 Skyboxes.meta
-   4 Smooth! Orbit Cam/
-   1 Smooth! Orbit Cam.meta
+   4 Smooth!_Orbit_Cam/
+   1 Smooth!_Orbit_Cam.meta
    8 SteamVR/
    1 SteamVR.meta
-   4 Upper Class.mat
-   1 Upper Class.mat.meta
-   4 Upper Middle Class.mat
-   1 Upper Middle Class.mat.meta
+   4 Upper_Class.mat
+   1 Upper_Class.mat.meta
+   4 Upper_Middle_Class.mat
+   1 Upper_Middle_Class.mat.meta
    4 Wireframe.mat
    1 Wireframe.mat.meta
-   4 Working Class.mat
-   1 Working Class.mat.meta
+   4 Working_Class.mat
+   1 Working_Class.mat.meta
 
-./Bonsai/Assets/Bonsai Code:
+./Bonsai/Assets/Bonsai_Code:
 total 933
   4 BonsaiBranch.cs
   1 BonsaiBranch.cs.meta
@@ -142,7 +142,7 @@ total 933
  12 ParseFile.cs
   1 ParseFile.cs.meta
 
-./Bonsai/Assets/Bonsai Code/Hackathon Code:
+./Bonsai/Assets/Bonsai_Code/Hackathon Code:
 total 97
 4 DrawLine.cs
 1 DrawLine.cs.meta
@@ -185,12 +185,12 @@ total 97
 4 Word Doc.mat
 1 Word Doc.mat.meta
 
-./Bonsai/Assets/laxer Assets:
+./Bonsai/Assets/laxer_Assets:
 total 5
 4 forest ground/
 1 forest ground.meta
 
-./Bonsai/Assets/laxer Assets/forest ground:
+./Bonsai/Assets/laxer_Assets/forest ground:
 total 67
  0 demoscene forest ground/
  1 demoscene forest ground.meta
@@ -207,12 +207,12 @@ total 67
  8 Textures/
  1 Textures.meta
 
-./Bonsai/Assets/laxer Assets/forest ground/demoscene forest ground:
+./Bonsai/Assets/laxer_Assets/forest ground/demoscene forest ground:
 total 3732
 3728 LightmapFar-0.exr
    4 LightmapFar-0.exr.meta
 
-./Bonsai/Assets/laxer Assets/forest ground/Materials:
+./Bonsai/Assets/laxer_Assets/forest ground/Materials:
 total 21
 1 fern.mat
 1 fern.mat.meta
@@ -227,7 +227,7 @@ total 21
 1 rocks.mat
 1 rocks.mat.meta
 
-./Bonsai/Assets/laxer Assets/forest ground/Models:
+./Bonsai/Assets/laxer_Assets/forest ground/Models:
 total 2477
  72 forest ground branch mossy 1.fbx
   4 forest ground branch mossy 1.fbx.meta
@@ -286,7 +286,7 @@ total 2477
  80 tree small fg 3.fbx
   4 tree small fg 3.fbx.meta
 
-./Bonsai/Assets/laxer Assets/forest ground/Models/Materials:
+./Bonsai/Assets/laxer_Assets/forest ground/Models/Materials:
 total 15
 4 mossy tree2.mat
 1 mossy tree2.mat.meta
@@ -295,7 +295,7 @@ total 15
 4 tree1 branches.mat
 1 tree1 branches.mat.meta
 
-./Bonsai/Assets/laxer Assets/forest ground/Prefabs:
+./Bonsai/Assets/laxer_Assets/forest ground/Prefabs:
 total 516
 152 pine tree fg 1(windbend).asset
   1 pine tree fg 1(windbend).asset.meta
@@ -314,12 +314,12 @@ total 516
   4 tree fg 2(windbend).prefab
   1 tree fg 2(windbend).prefab.meta
 
-./Bonsai/Assets/laxer Assets/forest ground/terrain:
+./Bonsai/Assets/laxer_Assets/forest ground/terrain:
 total 14097
 14096 New Terrain 15.asset
     1 New Terrain 15.asset.meta
 
-./Bonsai/Assets/laxer Assets/forest ground/Textures:
+./Bonsai/Assets/laxer_Assets/forest ground/Textures:
 total 21920
  924 fern.png
    4 fern.png.meta
@@ -1121,12 +1121,12 @@ total 134652
 12292 sky.tga
     4 sky.tga.meta
 
-./Bonsai/Assets/Planet Earth:
+./Bonsai/Assets/Planet_Earth:
 total 1
 0 models/
 1 models.meta
 
-./Bonsai/Assets/Planet Earth/models:
+./Bonsai/Assets/Planet_Earth/models:
 total 0
 
 ./Bonsai/Assets/Skyboxes:
@@ -1146,7 +1146,7 @@ total 5785
  876 GalaxyUp.png
    4 GalaxyUp.png.meta
 
-./Bonsai/Assets/Smooth! Orbit Cam:
+./Bonsai/Assets/Smooth!_Orbit_Cam:
 total 1366
  100 demo_scene.unity
    1 demo_scene.unity.meta
@@ -1161,7 +1161,7 @@ total 1366
  100 test.unity
    1 test.unity.meta
 
-./Bonsai/Assets/Smooth! Orbit Cam/Demo_Scene_Objects:
+./Bonsai/Assets/Smooth!_Orbit_Cam/Demo_Scene_Objects:
 total 9519
    4 demo_GUI.cs
    1 demo_GUI.cs.meta
@@ -1184,20 +1184,20 @@ total 9519
    4 showValues.cs
    1 showValues.cs.meta
 
-./Bonsai/Assets/Smooth! Orbit Cam/Demo_Scene_Objects/Materials:
+./Bonsai/Assets/Smooth!_Orbit_Cam/Demo_Scene_Objects/Materials:
 total 5
 4 sattelite_001_baked.mat
 1 sattelite_001_baked.mat.meta
 
-./Bonsai/Assets/Smooth! Orbit Cam/Demo_Scene_Objects/sattelite_001.fbm:
+./Bonsai/Assets/Smooth!_Orbit_Cam/Demo_Scene_Objects/sattelite_001.fbm:
 total 0
 
-./Bonsai/Assets/Smooth! Orbit Cam/Prefab:
+./Bonsai/Assets/Smooth!_Orbit_Cam/Prefab:
 total 9
 8 CameraSystem.prefab
 1 CameraSystem.prefab.meta
 
-./Bonsai/Assets/Smooth! Orbit Cam/Scripts:
+./Bonsai/Assets/Smooth!_Orbit_Cam/Scripts:
 total 26
 20 SmoothOrbitCam.cs
  1 SmoothOrbitCam.cs.meta
@@ -2242,13 +2242,14 @@ total 3824
  328 unity_builtin_extra
 
 ./Bonsai/Library:
-total 7489
+total 7505
    8 AnnotationManager
 7260 assetDatabase3
    1 AssetImportState
    0 BuildPlayer.prefs
    8 BuildSettings.asset
    0 Collab/
+   0 CrashedAssetImports.txt
   20 CurrentLayout.dwlt
   16 CurrentMaximizeLayout.dwlt
    1 EditorInstance.json
@@ -2265,7 +2266,7 @@ total 7489
   16 ScriptMapper
    4 ShaderCache/
    8 ShaderCache.db
-  16 shadercompiler-UnityShaderCompiler.exe0.log
+  32 shadercompiler-UnityShaderCompiler.exe0.log
    1 ShaderIncludePaths
    8 SpriteAtlasDatabase.asset
    8 TilemapEditorUserSettings.asset
@@ -2881,14 +2882,14 @@ total 80
 total 0
 
 ./Bonsai/Library/metadata/17:
-total 640
+total 644
   8 1731d642c0b250b48bb8cdfb153d9792
   4 1731d642c0b250b48bb8cdfb153d9792.info
  24 1762632d09b8d184b80f483612ffb5f8
   8 1762632d09b8d184b80f483612ffb5f8.info
 152 1762632d09b8d184b80f483612ffb5f8.resource
   8 176ff0b5cfc029f488318cfd971a53d0
-  8 176ff0b5cfc029f488318cfd971a53d0.info
+ 12 176ff0b5cfc029f488318cfd971a53d0.info
   8 17ccfca8b35fa0e45a03e484fa3df390
   4 17ccfca8b35fa0e45a03e484fa3df390.info
 356 17da6d53ec93a0444bd0f751b1d02477
@@ -3008,11 +3009,11 @@ total 100
  4 20ebf1f6c66a1c642947ee827b9ee1ff.info
 
 ./Bonsai/Library/metadata/21:
-total 104
+total 108
 20 210c1550425ed90419d73be09bde0486
  4 210c1550425ed90419d73be09bde0486.info
  8 211de4cf8c52ab6489e1d890e3b740da
- 8 211de4cf8c52ab6489e1d890e3b740da.info
+12 211de4cf8c52ab6489e1d890e3b740da.info
  8 21543d2b66928224f8a9536ff3811682
  4 21543d2b66928224f8a9536ff3811682.info
  8 215977489d11178d11005b9844295342
@@ -3815,9 +3816,9 @@ total 1420
    4 5afb9687033af4bca957216add3fe854.info
 
 ./Bonsai/Library/metadata/5b:
-total 828
+total 832
   8 5b43a8ed6453a87469a5ef3988dd458c
-  8 5b43a8ed6453a87469a5ef3988dd458c.info
+ 12 5b43a8ed6453a87469a5ef3988dd458c.info
   8 5ba22c80948c94e44a82b9fd1b3abd0d
   4 5ba22c80948c94e44a82b9fd1b3abd0d.info
 696 5bbbaae05baefe741abc967484c6a32a
@@ -3965,13 +3966,13 @@ total 780
   4 65ef702aaa09d3f46a75659678b1a711.info
 
 ./Bonsai/Library/metadata/66:
-total 96
+total 100
 28 66281976896b84291a7c933800665eee
  4 66281976896b84291a7c933800665eee.info
  8 664f3a528baa692478b475f9da473e48
  4 664f3a528baa692478b475f9da473e48.info
  8 665c0b089c9f4e74fae324508ac764bc
- 8 665c0b089c9f4e74fae324508ac764bc.info
+12 665c0b089c9f4e74fae324508ac764bc.info
  8 667230ade3b20b641a0ba08bdfd760fc
  4 667230ade3b20b641a0ba08bdfd760fc.info
  8 669717f3193a457b9bad9665ebcae836
@@ -4104,7 +4105,7 @@ total 216
  4 6eba09db510a166419398808e0f55833.info
 
 ./Bonsai/Library/metadata/6f:
-total 316
+total 324
  84 6f1418cffd12146f2a83be795f6fa5a7
   4 6f1418cffd12146f2a83be795f6fa5a7.info
   8 6f19108706fdce9469603d07980eb8ad
@@ -4112,7 +4113,7 @@ total 316
   8 6f3bba2c36dd79242b3157dbcd876bf2
   4 6f3bba2c36dd79242b3157dbcd876bf2.info
   8 6f71a5a5f26e9d641a08f860f199048e
-  4 6f71a5a5f26e9d641a08f860f199048e.info
+ 12 6f71a5a5f26e9d641a08f860f199048e.info
   8 6fa11a15b6830ea40808c51f7a5f0a4e
   4 6fa11a15b6830ea40808c51f7a5f0a4e.info
  16 6fbe662f128ee1d4297c9e6c9f38edbe
@@ -4388,9 +4389,9 @@ total 60
  4 83d8db0ec466c14429f58c68c16398a1.info
 
 ./Bonsai/Library/metadata/84:
-total 552
+total 560
   8 8406772f1f8b91b4f809c573bff547aa
-  4 8406772f1f8b91b4f809c573bff547aa.info
+ 12 8406772f1f8b91b4f809c573bff547aa.info
   8 844a279fca51bf246a6a01863e1ea039
   4 844a279fca51bf246a6a01863e1ea039.info
   8 844f815391db42d49455cbf1a7bfc434
@@ -4719,11 +4720,11 @@ total 36
 4 9ec5dc72125424af38a9bfaca532acc8.info
 
 ./Bonsai/Library/metadata/9f:
-total 152
+total 156
  8 9f091dea68a1452cb6c04a6dfa73d5f5
  4 9f091dea68a1452cb6c04a6dfa73d5f5.info
  8 9f1262e91d4869d4aa1aa7cd18593b9d
- 8 9f1262e91d4869d4aa1aa7cd18593b9d.info
+12 9f1262e91d4869d4aa1aa7cd18593b9d.info
  8 9f17a0688211d476f8d8c9742bb9f992
  4 9f17a0688211d476f8d8c9742bb9f992.info
 48 9f884441bea153347be721454dc13716
@@ -4942,13 +4943,13 @@ total 336
  4 adec466a1f9044ea78471a5ce6f78271.info
 
 ./Bonsai/Library/metadata/ae:
-total 1860
+total 1868
 1380 ae561c4b1e740354fb9a2b30b2ff4dac
    4 ae561c4b1e740354fb9a2b30b2ff4dac.info
    8 ae8d62ddc8628a446b2fc0c947b905b1
-   8 ae8d62ddc8628a446b2fc0c947b905b1.info
+  12 ae8d62ddc8628a446b2fc0c947b905b1.info
    8 aea4d6c3d6e92224f88939fc0b40352e
-   8 aea4d6c3d6e92224f88939fc0b40352e.info
+  12 aea4d6c3d6e92224f88939fc0b40352e.info
  440 aedd542182485184690857c54897db27
    4 aedd542182485184690857c54897db27.info
 
@@ -5726,7 +5727,7 @@ total 296
  56 eafd8df4914b6054db2b36a3aa4b4830.resource
 
 ./Bonsai/Library/metadata/eb:
-total 288
+total 292
   8 eb06fe8a6f960f640a780fcc485f24b5
   4 eb06fe8a6f960f640a780fcc485f24b5.info
   8 eb6d6653511aff5409d0827d4e3b79ea
@@ -5736,7 +5737,7 @@ total 288
   8 ebcc975aa3c1d5240936c86b600ca2a5
   4 ebcc975aa3c1d5240936c86b600ca2a5.info
   8 ebf42c68af484f447af0abbd7b082da5
-  8 ebf42c68af484f447af0abbd7b082da5.info
+ 12 ebf42c68af484f447af0abbd7b082da5.info
  24 ebf848d63ce32d047a0acbc338e35371
   4 ebf848d63ce32d047a0acbc338e35371.info
 104 ebf848d63ce32d047a0acbc338e35371.resource
@@ -5829,7 +5830,7 @@ total 124
  4 f2f2850d002f14a47bff32fdf73df53e.info
 
 ./Bonsai/Library/metadata/f3:
-total 404
+total 408
   8 f3004e0c0e5df074abcb3548fd812bfc
   4 f3004e0c0e5df074abcb3548fd812bfc.info
 356 f33ccd07f9433f44f8c5430938b168ac
@@ -5837,7 +5838,7 @@ total 404
   8 f36494712dbe5b543b9a1da5fa305373
   4 f36494712dbe5b543b9a1da5fa305373.info
   8 f3bbe97c7bbeb1c41828e2fb83c455b9
-  8 f3bbe97c7bbeb1c41828e2fb83c455b9.info
+ 12 f3bbe97c7bbeb1c41828e2fb83c455b9.info
 
 ./Bonsai/Library/metadata/f4:
 total 536
@@ -6017,13 +6018,13 @@ total 1026
   1 UnityEditor.StandardEvents.dll.mdb
 
 ./Bonsai/Library/ShaderCache:
-total 556
+total 572
 32 0/
 28 1/
 40 2/
 32 3/
 48 4/
-32 5/
+40 5/
 40 6/
 32 7/
 32 8/
@@ -6032,11 +6033,11 @@ total 556
 40 b/
 32 c/
 32 d/
-32 e/
+40 e/
 40 f/
 
 ./Bonsai/Library/ShaderCache/0:
-total 334
+total 342
  4 00ab713c813c3d6ed42b70d20edb51b4.bin
  4 017e9e48c2cb8f5054b8a43349393bf4.bin
  4 01890a4713cad468eb21152a91d6c4e9.bin
@@ -6107,6 +6108,7 @@ total 334
  8 0f5fd27914887bed41cdda1ce91ebb3c.bin
  4 0f855d4e2f7e45fe4fa6ba673da578d7.bin
  4 0f9b43559b86527dcf90414bf538a06a.bin
+ 8 0fa77c9cfd606d53a5db13c9ce826100.bin
  4 0fb00347348c32b8b4cbc2c844158305.bin
  4 0ff102a4c5b6bf9bb77e8f52b7a2b97a.bin
  4 0ff884c90eefcc7291b1620924228416.bin
@@ -6272,74 +6274,75 @@ total 335
  4 2feb5a133be0f50e6bb86d69e448b8b0.bin
 
 ./Bonsai/Library/ShaderCache/3:
-total 261
-4 304436fce70285b449a55614ca4e6368.bin
-4 304499096d37c03484368592c2e420c0.bin
-4 3046607c458d5310d59be9b08cf90897.bin
-4 3089f5e703eb8f2517b7922b791a8d1f.bin
-4 30abddd9d1ba1612955fa89c5a61250b.bin
-1 30fe7359e8bef83c66760b054a98c881.bin
-4 310b55a7ed5a851efda5ebfcd0dad158.bin
-4 310d583a59af0fdc04e96bd3091e4794.bin
-4 312be8fa00233d53b4a810e6da14c66e.bin
-4 314fce7ef91b1640ec188994bd134359.bin
-4 319bec9b53d97960e7ae880d2e455358.bin
-4 32199a97c17f9a983f31573168560f91.bin
-4 322c07e063a511c7f36607ec88ebd030.bin
-4 326a63a85cad4633b8faf013990a8883.bin
-4 3278b099a0ae1ecf2abb375676e92b51.bin
-8 327f5b9b02ac10951d6153ec9e78e90d.bin
-4 328e4b657fd30aedaeacf3f4d1744fbb.bin
-8 32df1098b5d4d026b29a8a75c2cf83e3.bin
-4 32f3d4c89cba579026b65ebffd6bd0e3.bin
-4 330279df96e8ed5b46c5719aab2e9c7b.bin
-4 3367404c7e660338ab44cdea4c51bdf3.bin
-4 336c6527ee424f8ab1b1208c8b780081.bin
-8 33df8020811b1bef3c2d94ba0e1260f1.bin
-4 33e7a11b745e56bc350a01666da21aa1.bin
-4 33edf36a80d0c0de8e554933b65aa8c0.bin
-4 351e04c117bec2cd24fcd294c4c804d2.bin
-4 3533f9bd87eb7436d3366667a33e0d6a.bin
-8 3547a3055da9270b2955a1bdc0b1e275.bin
-4 35b0786e4dcab4128f95f34aafc51f55.bin
-4 35deff87a55f96e816d09137ebe724c6.bin
-4 36176f552fbe0eda2d6e5cce2c8b744e.bin
-4 3626f05ca88e8794adcd60c367ac4ac2.bin
-4 3689cd156506c32b24805c8a08f24c5a.bin
-4 36a73a7521fc0e1b6cb5dde9e0786948.bin
-4 36e026df5553d69284e7199b4bc8b29d.bin
-4 36e72168f086c47e169c3f9eff611166.bin
-4 36fae887e129c957a24f9e8da1eebc79.bin
-4 3722866dfba4c4e33c47f47f69080f6d.bin
-4 38640a40d69d8d3a78ce44672deab1f1.bin
-4 388604c45bd2d3b27d3612ac220d057a.bin
-4 38c762d3c7924bc1ef2664fd5cbe96bd.bin
-4 38d5259bfb31f43a881b300bf5998a13.bin
-4 3907a2a75b628fde6027a19585b1b72f.bin
-4 393901eadf47e89ab8b304b240542ea1.bin
-4 3944de49d84b2de2370b7f8e1b183b08.bin
-1 394e2c486a83991a11cf37e826fd74ed.bin
-1 39c6e40528d4bdbeaa142450b0f22283.bin
-8 3a12e01b0e8b307518601eccaadd2df6.bin
-4 3a4301935f5f683b340731515449f290.bin
-4 3b18320170aed2b97483478bdf383cb0.bin
-1 3bf614f2e193b6fafccb535a970c9c7f.bin
-4 3c3b7aac232a71d4efc27a793bfc1d7f.bin
-4 3d43a123247cf5adfacde5c67635cb05.bin
-1 3dbbc3e16c52c22c5cef6f536dc6d093.bin
-4 3e46b343eefee88f00a28afc3884d0ea.bin
-4 3e4c73bfe8d692bb6f22c8a3f118cedd.bin
-4 3e5349524a3a68137569747df1efdce6.bin
-4 3e75e056d9b334af4d540c37485eacd7.bin
-4 3e8e1730642cc54f85e689d819702d6b.bin
-4 3eab4a6cfb480f6e76ccda5c91f55331.bin
-4 3eb78ce13a4b7ab6802e5e7456444640.bin
-4 3f11bda9684d1f84c361f867aa64af3b.bin
-4 3fb75979cc324131f916ac2a995587fc.bin
-4 3fc929753d237665a69b5f173654f20b.bin
+total 273
+ 4 304436fce70285b449a55614ca4e6368.bin
+ 4 304499096d37c03484368592c2e420c0.bin
+ 4 3046607c458d5310d59be9b08cf90897.bin
+ 4 3089f5e703eb8f2517b7922b791a8d1f.bin
+ 4 30abddd9d1ba1612955fa89c5a61250b.bin
+ 1 30fe7359e8bef83c66760b054a98c881.bin
+ 4 310b55a7ed5a851efda5ebfcd0dad158.bin
+ 4 310d583a59af0fdc04e96bd3091e4794.bin
+ 4 312be8fa00233d53b4a810e6da14c66e.bin
+ 4 314fce7ef91b1640ec188994bd134359.bin
+ 4 319bec9b53d97960e7ae880d2e455358.bin
+ 4 32199a97c17f9a983f31573168560f91.bin
+ 4 322c07e063a511c7f36607ec88ebd030.bin
+ 4 326a63a85cad4633b8faf013990a8883.bin
+ 4 3278b099a0ae1ecf2abb375676e92b51.bin
+ 8 327f5b9b02ac10951d6153ec9e78e90d.bin
+ 4 328e4b657fd30aedaeacf3f4d1744fbb.bin
+ 8 32df1098b5d4d026b29a8a75c2cf83e3.bin
+ 4 32f3d4c89cba579026b65ebffd6bd0e3.bin
+ 4 330279df96e8ed5b46c5719aab2e9c7b.bin
+ 4 3367404c7e660338ab44cdea4c51bdf3.bin
+ 4 336c6527ee424f8ab1b1208c8b780081.bin
+ 8 33df8020811b1bef3c2d94ba0e1260f1.bin
+ 4 33e7a11b745e56bc350a01666da21aa1.bin
+ 4 33edf36a80d0c0de8e554933b65aa8c0.bin
+ 4 351e04c117bec2cd24fcd294c4c804d2.bin
+ 4 3533f9bd87eb7436d3366667a33e0d6a.bin
+ 8 3547a3055da9270b2955a1bdc0b1e275.bin
+ 4 35b0786e4dcab4128f95f34aafc51f55.bin
+ 4 35deff87a55f96e816d09137ebe724c6.bin
+ 4 36176f552fbe0eda2d6e5cce2c8b744e.bin
+ 4 3626f05ca88e8794adcd60c367ac4ac2.bin
+ 4 3689cd156506c32b24805c8a08f24c5a.bin
+ 4 36a73a7521fc0e1b6cb5dde9e0786948.bin
+ 4 36e026df5553d69284e7199b4bc8b29d.bin
+ 4 36e72168f086c47e169c3f9eff611166.bin
+ 4 36fae887e129c957a24f9e8da1eebc79.bin
+ 4 3722866dfba4c4e33c47f47f69080f6d.bin
+ 4 38640a40d69d8d3a78ce44672deab1f1.bin
+ 4 388604c45bd2d3b27d3612ac220d057a.bin
+ 4 38c762d3c7924bc1ef2664fd5cbe96bd.bin
+ 4 38d5259bfb31f43a881b300bf5998a13.bin
+ 4 3907a2a75b628fde6027a19585b1b72f.bin
+ 4 393901eadf47e89ab8b304b240542ea1.bin
+ 4 3944de49d84b2de2370b7f8e1b183b08.bin
+ 1 394e2c486a83991a11cf37e826fd74ed.bin
+ 1 39c6e40528d4bdbeaa142450b0f22283.bin
+ 8 3a12e01b0e8b307518601eccaadd2df6.bin
+ 4 3a4301935f5f683b340731515449f290.bin
+ 4 3b18320170aed2b97483478bdf383cb0.bin
+ 1 3bf614f2e193b6fafccb535a970c9c7f.bin
+ 4 3c3b7aac232a71d4efc27a793bfc1d7f.bin
+ 4 3d43a123247cf5adfacde5c67635cb05.bin
+ 1 3dbbc3e16c52c22c5cef6f536dc6d093.bin
+ 4 3e46b343eefee88f00a28afc3884d0ea.bin
+ 4 3e4c73bfe8d692bb6f22c8a3f118cedd.bin
+ 4 3e5349524a3a68137569747df1efdce6.bin
+ 4 3e75e056d9b334af4d540c37485eacd7.bin
+ 4 3e8e1730642cc54f85e689d819702d6b.bin
+ 4 3eab4a6cfb480f6e76ccda5c91f55331.bin
+ 4 3eb78ce13a4b7ab6802e5e7456444640.bin
+ 4 3f11bda9684d1f84c361f867aa64af3b.bin
+12 3f4b9dec1cc9434a7a63273749fc15dd.bin
+ 4 3fb75979cc324131f916ac2a995587fc.bin
+ 4 3fc929753d237665a69b5f173654f20b.bin
 
 ./Bonsai/Library/ShaderCache/4:
-total 375
+total 379
  4 4160e57d54c92716b6e5142a524d925f.bin
  4 416fea63aca9223c5498e824f77b333c.bin
  4 4175269a26b36ee8e12324279b0e971a.bin
@@ -6364,6 +6367,7 @@ total 375
 12 4417306756e8c12f617614223bb3302d.bin
  4 44679b2f514435b903b95f687d23ad08.bin
  4 446b765efaf8f51785c36ceb93edfeb3.bin
+ 4 44993d49b3cfb6976f675fdbf127673b.bin
  4 44a07352c6058de0d9532beab830c255.bin
  4 44a08248ef1ff2d292ad85b3c9e4d87a.bin
  8 44a1a1b9635080777d40b2d8ea9ad172.bin
@@ -6431,7 +6435,7 @@ total 375
  4 4fef2f9e36c48fe7e4be5b2cb0303682.bin
 
 ./Bonsai/Library/ShaderCache/5:
-total 293
+total 301
 4 503e583ba3e74a4a95345b5b306f7fab.bin
 4 50925015840a5e518a1da92dc4da3d19.bin
 4 50acb60d634170b59042b9195bb9bfe7.bin
@@ -6441,6 +6445,7 @@ total 293
 8 519db830e684da6622a082061fd7b820.bin
 4 52000732f0f92f4a3fbb53987c5a3114.bin
 4 524db3194f8afcdbf3d9745f3d8a0408.bin
+4 5267a8db13ed2a3a1665c595040567b4.bin
 1 526ed2f44a9d1636f09186355e76b9e5.bin
 4 52b51f2823081d6cba59419a137c1cdc.bin
 1 52ed5a08b0cbde21bec0fe082b82dff7.bin
@@ -6475,6 +6480,7 @@ total 293
 4 5a6bfe9642fcbe2f9313fa2cbd559333.bin
 4 5a851d8a56e250fe736f688a0472423f.bin
 4 5acc1e7cb9d04fc6f9fe1b960748ee3e.bin
+4 5ad52bda5dd7207fa4b76d74bfbe8479.bin
 4 5ae4b7bb66952982580a447db431b61f.bin
 4 5b088307b02ca6409e4f619c11d9a1f7.bin
 4 5b258a6dcee0d168072fa127261d70fa.bin
@@ -6505,7 +6511,7 @@ total 293
 4 5fe41ca0477b7a821844a8f491f3a126.bin
 
 ./Bonsai/Library/ShaderCache/6:
-total 327
+total 335
  4 601faeaf8dd3772363fd411567607c17.bin
  4 60234c467b522cfe8326cf8bec705c69.bin
  4 604753cdc8ad4b05f774acffeea7bd09.bin
@@ -6549,6 +6555,7 @@ total 327
  4 680c3bc2e29d57e5c9c205a6be32e272.bin
  4 68204f6216c62086b95584f35e64e02a.bin
  8 68407c9e0181d0b37661f7598e79f546.bin
+ 8 684c918f72ac441dc0bf3f5a1c1cb3d8.bin
  4 691bb9d9515a064da84ba917cc059958.bin
  4 692eec62955578000bc3d06ee32eabcb.bin
  4 6955c4ab22d5eb6a0ae9cbf30ed4631b.bin
@@ -6585,7 +6592,7 @@ total 327
  4 6fd0bd5cea901f3b967d2c9b077da002.bin
 
 ./Bonsai/Library/ShaderCache/7:
-total 305
+total 313
  1 70c015d0636173294246bfac4f600979.bin
  4 7136fba534c9303aaedd5c909e96d2c8.bin
  4 713dd831c29a81bdb94c60d8d29badf1.bin
@@ -6609,6 +6616,7 @@ total 305
  4 74e9cd8e593750b37dbd06517a5e794e.bin
  4 753920e8039e60a8212d2e1243bf5b07.bin
  4 75835d19931961709690542b31032e46.bin
+ 4 7675e2262d2a250c70e4e6e217b10722.bin
  4 769f1427ec509cca3e04b3acdb45534f.bin
  4 76a5be23372066f7880bdf1c0c4a195d.bin
  4 76a7efda7644baf91cadff4d8a3435e3.bin
@@ -6628,6 +6636,7 @@ total 305
  4 7abdb90d784c7b5e686e706bfaf15b54.bin
  4 7ad4d848f63ac9915a730f7824a56f2b.bin
  4 7ad6d047089f9b147a7cfc4d9617fe40.bin
+ 4 7b1fed2b27a977617a0455b98eb32df6.bin
  4 7ba85f758e3135608c9fcfd93f87c4aa.bin
 12 7be6e9130859c6ae15fa7954d36051bd.bin
  4 7c0b63250cae30ff42667df3e76b4c0a.bin
@@ -6652,7 +6661,7 @@ total 305
  8 7f6d6d8d24fb76c2fa7805dc6ec5d3bb.bin
 
 ./Bonsai/Library/ShaderCache/8:
-total 300
+total 304
 8 805b9589255a3f761f4153c668c449e7.bin
 4 80e082cadf9252b77da845ac6471eace.bin
 8 80ea23afa0ce12fc17d0272c39ee84c9.bin
@@ -6727,11 +6736,12 @@ total 300
 4 8f55b14a5fdf280a32a62d1d0835cc88.bin
 4 8f98451f6517cf3f030309f09b28c517.bin
 8 8fb553a4fa51ba085c27e37e0ce3c024.bin
+4 8fd7343df48db396cef48f296a7d074b.bin
 4 8fe88edffbfa1b9a05597685212c1468.bin
 1 8ff69dfad811f44ce580b5e57b7d0a82.bin
 
 ./Bonsai/Library/ShaderCache/9:
-total 323
+total 339
  4 9053066784e525c433a1daafdd1dc71e.bin
  4 9074f69600d3c78298be7442a4995bea.bin
  4 908c3109834968ca6387be7844f77fd0.bin
@@ -6768,6 +6778,7 @@ total 323
  4 972517b2c68787512cb634a03db95c66.bin
  4 972b7653c001d36b2f4e6aadf7a491e8.bin
  4 97330cc06ffa7ee9adf0af950065d868.bin
+ 4 9744162fdb75cdbfae6193adbc4c40b7.bin
  4 9774202d9c700e1a3002f1486cf64461.bin
  4 97932eb0893344e01ecd1bd51f3e095f.bin
  4 97953ed9626e1dbe27cb7b077a308f2f.bin
@@ -6785,6 +6796,7 @@ total 323
  4 9ab1afa6cb63d327d90cd03e42d55573.bin
  4 9adf459e48390bdddc0f879b4f5b37f8.bin
  4 9ae611d172666e8aee9f872c418eba29.bin
+12 9b19cde19f3ff4656f3287a9bb87106b.bin
  4 9b5661f2c89fda4773cf980894c1a3da.bin
  4 9b6704b85bf834ddcbcd9b037d62b114.bin
  1 9b89a0c3cc4337edfa3837a9319b5dcc.bin
@@ -6811,86 +6823,89 @@ total 323
  4 9fcf9281be9f9edbbc4ad96f349bf8a6.bin
 
 ./Bonsai/Library/ShaderCache/a:
-total 315
-4 a026be1c80dbe6747d7c3ef704fb38f1.bin
-4 a0b69edd983a96bf470b283f5a2542ae.bin
-4 a1281c940a851e252ce6f23775d97240.bin
-4 a137884318534d1d78c219f6050bf75d.bin
-1 a13d3930654c8843e508cd9be22e13e4.bin
-4 a199c21ac75ae8fc343a5b24d36bda8a.bin
-4 a1ef7cbc657f4774c470081949ec1f83.bin
-4 a1fd1b4e7fdbb3dcf90499cbda32977d.bin
-4 a2238a4fc653b66ae6fc33e9adb6c9ae.bin
-4 a236f25854d12906db0ba8ce794c1908.bin
-4 a23e9d76e94eb3dcb3ea3f62a5ff59ae.bin
-4 a247b380486d69769a948621092a50bb.bin
-4 a25f5f5c23a37d4b24f0751cfc0766ee.bin
-4 a32e2f5982a5232a68709b566b77cbca.bin
-4 a360d5f3fc925dc0254292c98e13b7ba.bin
-4 a391170b7f54d8cec9c4e6f923612ffd.bin
-4 a39a71b515f0469ab281e9ee5ff00b51.bin
-4 a3c361085e9ba88b08eef030f747d653.bin
-4 a3cc99829acdbd5a2293be636f022d1d.bin
-4 a3dc042568d9b658b8a538d689d4c314.bin
-4 a3f54d6b46982bbf2bc2d99c8157c7f6.bin
-4 a40bcdfdaad68158b2eb6802009bc7f5.bin
-4 a41687a5950fa5eaf7102f5d98b5ed4c.bin
-8 a46d66815c0324267f4aa405e7ecca63.bin
-4 a4bd8890eb04a76409f382306c19a3e0.bin
-4 a4e327a68fb7a3b25448e25d4ff93cbc.bin
-4 a5d03dbd7678d314bdae879caf6c6eb5.bin
-4 a5ebd3cdd9af42c0733ae31d8e10702c.bin
-4 a616e12ebebbb2c6f98c758b64e39376.bin
-4 a63d476dbc87f2c1ebe1a3395527358f.bin
-8 a652ab4fcaf45fc3c2d3aa32acafe9ea.bin
-4 a678899760b69ff92d36b846c5a39b05.bin
-4 a68e0ec475393663918e504fde01799a.bin
-4 a6d60337b1e9087a7b523dae568231a7.bin
-4 a6e04f764b3081e5df5da9207507ef52.bin
-4 a6f59e2e75e1672bdeef5b00a5dd3ab3.bin
-4 a736e81f1ac940b578164a7ad34bd2bc.bin
-4 a7678a18038f80da1d5cfe9bed1b9421.bin
-4 a7d2893b7080cfa290170f1975e9bebc.bin
-4 a7e52e2bad11d42153c095cdd900b46f.bin
-1 a830ba906891d348962f07ff1ad53bb6.bin
-4 a86b12e4b97ed938309467d2ecc5609c.bin
-4 a88b10eba6d78056e7df533a4293b49e.bin
-4 a8a7e6997193acea3099c6114bb338d9.bin
-4 a8e8728f200989266a42db733b623afd.bin
-4 a94979c44d0faeeaebc120797e295a63.bin
-4 a96b4936eb47a5a2c759a55507ff4978.bin
-4 a994c91d7f4aaea1ba0e694db689e582.bin
-4 a9c5e7d0586b8e462185db077f06b0e1.bin
-8 a9c694b18266c65dc199e9469de234a6.bin
-4 a9da011e64baa57e9b25dbbb29a99358.bin
-4 a9dbf0b2ab13d5ab5813360d4b2e72a6.bin
-4 aa17c1f0479fe9ddab7bc983635a9584.bin
-4 aa5d2dfb02e600d516a8c23c67100d69.bin
-4 aa6562df627f9759193c5c2f4aebad0b.bin
-4 ab9d622747e68824bbcfb0d3a5383dfd.bin
-4 abc14dde15dfdda9b9771c2bc785d053.bin
-4 ac5d0265ffc9041a3b536d4aa5812212.bin
-4 ac7823985d456e90a2ca2d153abad0b6.bin
-8 ad5ecc06dc9fed8eddd43a8bba383a4c.bin
-4 ad80404d845c676e66fe604f5e867305.bin
-4 ad8673c2bbca0945a4879e3ad53be207.bin
-4 adb94a89f809042c648f3b0287e7e3d6.bin
-4 ade9c002cb4e36826c91c3ca3130d43c.bin
-4 ae1458f2ce82ba94f61fd48010b1bdd7.bin
-4 ae2d750cc6a6c85a6141c2ad230abb48.bin
-4 ae3784c2bcab3100da0c788a241c9b4e.bin
-4 ae37b78c176fad00c71c4ce1842f04dc.bin
-4 ae5456d676923f6236ec897e9b4d9bf1.bin
-4 ae893aadd44ebbb535e915f883b5ee68.bin
-8 aef11ae4963217e0bce47df75083925c.bin
-4 af0d2eea1c00fdb6431911bd5b974e80.bin
-4 af0dc2d1973992984658e692ed549ae5.bin
-4 af2277bd7463dc537bd784a6a8511ba6.bin
-4 af8ee8a12e3ce13f421d5d26593194a3.bin
-1 afb73c36fe8d00e88db0daca129ab391.bin
+total 343
+ 4 a026be1c80dbe6747d7c3ef704fb38f1.bin
+ 4 a0b69edd983a96bf470b283f5a2542ae.bin
+ 4 a1281c940a851e252ce6f23775d97240.bin
+ 4 a137884318534d1d78c219f6050bf75d.bin
+ 1 a13d3930654c8843e508cd9be22e13e4.bin
+ 4 a199c21ac75ae8fc343a5b24d36bda8a.bin
+12 a1e26a79a413f7e04f882e4e9025c0b6.bin
+ 4 a1ef7cbc657f4774c470081949ec1f83.bin
+ 4 a1fd1b4e7fdbb3dcf90499cbda32977d.bin
+ 4 a2238a4fc653b66ae6fc33e9adb6c9ae.bin
+ 4 a236f25854d12906db0ba8ce794c1908.bin
+ 4 a23e9d76e94eb3dcb3ea3f62a5ff59ae.bin
+ 4 a247b380486d69769a948621092a50bb.bin
+ 4 a25f5f5c23a37d4b24f0751cfc0766ee.bin
+ 4 a32e2f5982a5232a68709b566b77cbca.bin
+ 4 a360d5f3fc925dc0254292c98e13b7ba.bin
+ 4 a391170b7f54d8cec9c4e6f923612ffd.bin
+ 4 a39a71b515f0469ab281e9ee5ff00b51.bin
+ 4 a3c361085e9ba88b08eef030f747d653.bin
+ 4 a3cc99829acdbd5a2293be636f022d1d.bin
+ 4 a3dc042568d9b658b8a538d689d4c314.bin
+ 4 a3f54d6b46982bbf2bc2d99c8157c7f6.bin
+ 4 a40bcdfdaad68158b2eb6802009bc7f5.bin
+ 4 a41687a5950fa5eaf7102f5d98b5ed4c.bin
+12 a461e21307b91296aa603559d9f9f703.bin
+ 8 a46d66815c0324267f4aa405e7ecca63.bin
+ 4 a4bd8890eb04a76409f382306c19a3e0.bin
+ 4 a4e327a68fb7a3b25448e25d4ff93cbc.bin
+ 4 a54857edcd6d82d127b13ea9f6f3513e.bin
+ 4 a5d03dbd7678d314bdae879caf6c6eb5.bin
+ 4 a5ebd3cdd9af42c0733ae31d8e10702c.bin
+ 4 a616e12ebebbb2c6f98c758b64e39376.bin
+ 4 a63d476dbc87f2c1ebe1a3395527358f.bin
+ 8 a652ab4fcaf45fc3c2d3aa32acafe9ea.bin
+ 4 a678899760b69ff92d36b846c5a39b05.bin
+ 4 a68e0ec475393663918e504fde01799a.bin
+ 4 a6d60337b1e9087a7b523dae568231a7.bin
+ 4 a6e04f764b3081e5df5da9207507ef52.bin
+ 4 a6f59e2e75e1672bdeef5b00a5dd3ab3.bin
+ 4 a736e81f1ac940b578164a7ad34bd2bc.bin
+ 4 a7678a18038f80da1d5cfe9bed1b9421.bin
+ 4 a7d2893b7080cfa290170f1975e9bebc.bin
+ 4 a7e52e2bad11d42153c095cdd900b46f.bin
+ 1 a830ba906891d348962f07ff1ad53bb6.bin
+ 4 a86b12e4b97ed938309467d2ecc5609c.bin
+ 4 a88b10eba6d78056e7df533a4293b49e.bin
+ 4 a8a7e6997193acea3099c6114bb338d9.bin
+ 4 a8e8728f200989266a42db733b623afd.bin
+ 4 a94979c44d0faeeaebc120797e295a63.bin
+ 4 a96b4936eb47a5a2c759a55507ff4978.bin
+ 4 a994c91d7f4aaea1ba0e694db689e582.bin
+ 4 a9c5e7d0586b8e462185db077f06b0e1.bin
+ 8 a9c694b18266c65dc199e9469de234a6.bin
+ 4 a9da011e64baa57e9b25dbbb29a99358.bin
+ 4 a9dbf0b2ab13d5ab5813360d4b2e72a6.bin
+ 4 aa17c1f0479fe9ddab7bc983635a9584.bin
+ 4 aa5d2dfb02e600d516a8c23c67100d69.bin
+ 4 aa6562df627f9759193c5c2f4aebad0b.bin
+ 4 ab9d622747e68824bbcfb0d3a5383dfd.bin
+ 4 abc14dde15dfdda9b9771c2bc785d053.bin
+ 4 ac5d0265ffc9041a3b536d4aa5812212.bin
+ 4 ac7823985d456e90a2ca2d153abad0b6.bin
+ 8 ad5ecc06dc9fed8eddd43a8bba383a4c.bin
+ 4 ad80404d845c676e66fe604f5e867305.bin
+ 4 ad8673c2bbca0945a4879e3ad53be207.bin
+ 4 adb94a89f809042c648f3b0287e7e3d6.bin
+ 4 ade9c002cb4e36826c91c3ca3130d43c.bin
+ 4 ae1458f2ce82ba94f61fd48010b1bdd7.bin
+ 4 ae2d750cc6a6c85a6141c2ad230abb48.bin
+ 4 ae3784c2bcab3100da0c788a241c9b4e.bin
+ 4 ae37b78c176fad00c71c4ce1842f04dc.bin
+ 4 ae5456d676923f6236ec897e9b4d9bf1.bin
+ 4 ae893aadd44ebbb535e915f883b5ee68.bin
+ 8 aef11ae4963217e0bce47df75083925c.bin
+ 4 af0d2eea1c00fdb6431911bd5b974e80.bin
+ 4 af0dc2d1973992984658e692ed549ae5.bin
+ 4 af2277bd7463dc537bd784a6a8511ba6.bin
+ 4 af8ee8a12e3ce13f421d5d26593194a3.bin
+ 1 afb73c36fe8d00e88db0daca129ab391.bin
 
 ./Bonsai/Library/ShaderCache/b:
-total 374
+total 378
 4 b01abf60461f09dedce352a4be94f0c0.bin
 4 b0720b22982b257940f7b9c4acfeffce.bin
 4 b0d965897043ee0469c60d4fe0d9757b.bin
@@ -6945,6 +6960,7 @@ total 374
 4 b8e6afc15c7d2d6c4a39c6f22c50f0a2.bin
 4 b938b09f33e0f8eaa1f93fd01ab690cf.bin
 4 b9a32ab7156ee040bee98af3be34ac73.bin
+4 b9c6f6147cdb146bea0420ea29738c8e.bin
 4 ba37937b74762b33052b4f8480bdedae.bin
 4 ba8ec40990fb774318dc4dc0f24f4af6.bin
 4 ba93ce74774e216d10a2d1cc9d75d9d8.bin
@@ -7060,9 +7076,10 @@ total 321
  4 cf72cb3c9891616745d8140c7b11aa8f.bin
 
 ./Bonsai/Library/ShaderCache/d:
-total 348
+total 356
  4 d00ccc18151d2abf336643919fb88d0b.bin
  4 d05f31b1f044e587e9ab49551211fb14.bin
+ 4 d064dee243b7f2e1f0258f2dcf2137b2.bin
  1 d0ae8114b7f58d5a38074a2cf96006a0.bin
  1 d0e7dc25cd463a4f133fe1eb2181620f.bin
  4 d10b972e43b0ec7a22e0dcdafd5d1dd5.bin
@@ -7121,6 +7138,7 @@ total 348
  4 dd4c82b99db70b88bdca3fca04dd6118.bin
  8 dd7801463b6502d03f41e22bdfe72458.bin
  4 dd8e7250675048965a82f997f35bae6b.bin
+ 4 ddbd469be3ffdc2249092d2a31822bcd.bin
  4 de4a156cb797fae3338cb457f6655750.bin
  4 de8fcbd1bb23160c00166bf3537a08f1.bin
  4 de93b162a9295ec6a23d7fbca3781d88.bin
@@ -7138,7 +7156,7 @@ total 348
  4 dff632c18f531b70b858acff47f0c156.bin
 
 ./Bonsai/Library/ShaderCache/e:
-total 360
+total 364
  4 e004398ceec26d89e52730b218520c39.bin
  4 e008a466ee036a0a2b17ba98f20ea0b5.bin
  4 e02a25063270240132eeff5399d9296c.bin
@@ -7197,6 +7215,7 @@ total 360
  4 e9ddb8fef40a38172188def9e6362c27.bin
  1 ea0579b0ea8777c16a19a75bcfda1f72.bin
  4 ea19927ad3a5aaaad317706bb18238b3.bin
+ 4 ea81f4df2e7064ddf1484b589e48961e.bin
  4 ea8b966db6862b7ddb437bf3cf02aaa0.bin
  4 eac44246a87a36e525fc351fedb6d85e.bin
  4 eb09f5580ca3f2da6ece3dff719b98ec.bin
@@ -7225,7 +7244,7 @@ total 360
  4 efb9473b704d557d3430b45d8f81733b.bin
 
 ./Bonsai/Library/ShaderCache/f:
-total 364
+total 368
  4 f032975a95339a5ce6d134544497a192.bin
  4 f0efc16481d5ab5139b54710dd2da1cf.bin
  4 f133904bd6d94fceb28089f3678a3a91.bin
@@ -7277,6 +7296,7 @@ total 364
  4 f9d20aeba9860a062aa54cf1f6e4349d.bin
  4 fa0ad3eb62e7dd476a94a308cdc24bbb.bin
  4 fa19ebe5b1f77f0f83dc152853158695.bin
+ 4 fa455504444778599e1825720395555a.bin
  4 fa641c96fc50ae11ab2432221a257f4f.bin
  4 faecfb911eb0b9effacf7ca338414864.bin
  4 fb019fefed8d511116adaa0d11f256e9.bin
@@ -7353,52 +7373,48 @@ total 65
  4 UnityConnectSettings.asset
 
 ./Bonsai/Temp:
-total 840
+total 740
  0 __Backupscenes/
- 4 ProcessJobs/
+ 0 ProcessJobs/
  0 UnityLockfile
-24 UnityTempFile-07454407a78f4cb41a9a7cebea3cd2e5
-24 UnityTempFile-084b0f7a3193f654f84bbd6a17a9b3d6
-16 UnityTempFile-0bc209ed73351554f919ec52f123aff8
-24 UnityTempFile-1c05f430165a6644599e1c30db7d1f64
-16 UnityTempFile-2420b0dab22992642be00da76d0d3180
-24 UnityTempFile-38bd7faf47c6ad447bdec510cb285c16
-24 UnityTempFile-3b3d4760062e9854699efd31e617b866
-16 UnityTempFile-3ce4c8864819d7747bd3368e83823bd2
-20 UnityTempFile-3e75bac2a5b1f174e97e6f86fc58c1f9
-16 UnityTempFile-451e9104633a2934da3bd774873f4bfc
-24 UnityTempFile-45baa93bc17a1b340a00925bb8bf6731
-16 UnityTempFile-46807941ccbae394db4fddf0b6877486
-24 UnityTempFile-54403348606844e428a2428e5ff7c724
-24 UnityTempFile-55577afc47f85794e817933010312d85
-16 UnityTempFile-5e882348699b6c74d8d3137f8d6cf54b
-16 UnityTempFile-63642dd78ed1cf845bb7ce1400bb973b
-24 UnityTempFile-6572b67d6f176ef45860b2a01d1231f3
-24 UnityTempFile-6657914134bc8f0448482cd454b81ffb
-16 UnityTempFile-7ac88ea23b53a574592d568b53b8f386
-24 UnityTempFile-7b9915a102d2f9844a83401f74b6daef
-16 UnityTempFile-8ccb79b6ef185224681d80f027d30a60
-16 UnityTempFile-8ec65717aa6a31a479fea28f65bd5030
-24 UnityTempFile-9c87ea95dbb85b741b1d433e0772c5b6
-16 UnityTempFile-a28e512767eff5d4681db24b84a1d5e6
-16 UnityTempFile-a3a54048b747aee4ba83e5f85b7686e8
-24 UnityTempFile-a50f1f5fdbd49f04390471208d46c44b
-24 UnityTempFile-a6cd23e002742b04f8e79d824b1ac9e8
-24 UnityTempFile-ad1de45bae0bb7b4d93f2f8100a4dc4f
-24 UnityTempFile-b334fdc899d66f04c80875cfae34a16f
-24 UnityTempFile-b409bfd80c00e6142a70c1c8fa40ee7b
-24 UnityTempFile-b7ce15839c48680428a9a006850e51a4
-24 UnityTempFile-ba64e5d888ffa2748a7be6914e0ce811
-16 UnityTempFile-d0b80ecce5fc4c14eac2617da067ee9e
-16 UnityTempFile-d68bc073d56dd184086ca9f0d9e9f8b4
-24 UnityTempFile-da0cfd729a238b34894ad2de6eac0fdf
-16 UnityTempFile-dabe515b4947ae640a0f9a6082b3f367
-16 UnityTempFile-e3e89e48f7fa9d4488032a805b4bb82d
-16 UnityTempFile-e3ec9425e9adbff4baa99f32ed44b02f
-16 UnityTempFile-f113f01305f36be47b24a9d3fe933acd
-16 UnityTempFile-f6f8c47ed813489438e2b215babbc98e
-16 UnityTempFile-fd40d549e16284f4091c34406838cfc6
-16 UnityTempFile-ff8cab4dc43fe984a8efda2433fe3708
+16 UnityTempFile-0b7bbacf139395a4e9e5ef0b42dedf8d
+24 UnityTempFile-17bdfc08978a7974b993492dc6ec9ecb
+24 UnityTempFile-206d38101571aff47a7ae0c152ac1c31
+16 UnityTempFile-21680a21d29db4f4f9bf0d195de8aa8a
+20 UnityTempFile-27ebf238747ba9341b1de65d43f078c4
+16 UnityTempFile-2b166dd9a18bbf340ab97a1cd80385b4
+16 UnityTempFile-2ff12eb5ae5a8174db8735934ad401d1
+20 UnityTempFile-38f1838333bd239498b298b0675b9a44
+16 UnityTempFile-3f2e6d4c4590fb14da3a9f5ec7481bd2
+24 UnityTempFile-3f5b5695e39dfda4385ac2f4f8908420
+16 UnityTempFile-44146c29dd3225a4087f370582105a83
+24 UnityTempFile-465064be140ea2a4fa135a7776857d96
+16 UnityTempFile-58e64233dfd050f4b96e49ab8fc9bfcf
+20 UnityTempFile-5a3f242e3af7d29419f4416f778e6f81
+24 UnityTempFile-6484c26adf5562e45b86896a491afe22
+16 UnityTempFile-6759e5d1045868b4ab6807afc0402d2b
+20 UnityTempFile-6f18fa594fa7e034f931ec2cce54fe09
+24 UnityTempFile-73359c18ee057ed408ec348125047e66
+16 UnityTempFile-75053bc82c0009c47bb311aa57b2b185
+16 UnityTempFile-795178213297f5c4392d66e1d4217872
+16 UnityTempFile-8a508a78c191b4243b6ec23d5f9e9d79
+24 UnityTempFile-8b0a7fb3869edec4b8d04110aac36dcd
+16 UnityTempFile-9e6d27ec2aec03645bbf45a4068c754b
+16 UnityTempFile-a7cd3d341ad2f3b4daaad042e53952ff
+24 UnityTempFile-b0e4c865620def64d96274028bef01b2
+16 UnityTempFile-bbd27cc9b9c41704e86d83c5bc7ef918
+16 UnityTempFile-c0efc48ba1b0ad44284a705d5e419cdd
+24 UnityTempFile-c157212eda8209845baac340401c3174
+24 UnityTempFile-c29f31e31dd6b0b4db8a20371287aab9
+16 UnityTempFile-c4bde544b433ab847ae16420593b5a80
+24 UnityTempFile-cbd3494ca1d0aae4792588091cdb0bf3
+24 UnityTempFile-ce3d34e09fdbd0e4ca25bf1802efb441
+20 UnityTempFile-d0323b9efeeea1a4ba78dfb3c78c48d6
+16 UnityTempFile-e358388579771ca43b60512b4e8bfcb1
+24 UnityTempFile-e5c677d6e00ce0942a73bb6bf15b7d80
+16 UnityTempFile-f07a4c04db6a2bb449b8c474124afb84
+24 UnityTempFile-f9ad21460916b7d4ebabf03b87442d2a
+16 UnityTempFile-fd398d66e1dc6bd4caed6c281cd63d7d
  0 UnityVS_bin/
  0 UnityVS_obj/
 
@@ -7407,11 +7423,8 @@ total 664
 664 0.backup
 
 ./Bonsai/Temp/ProcessJobs:
-total 4
-1 7d0e03249df5330037bbdf2788513118.clust
-1 ba77561a22ef1001f66d06236107f670.clust
+total 1
 1 e9a6970f79cd12d8b075e7d72f1b07cb.bakert
-1 f074255507fc6e01f217486dd508d31c.clust
 
 ./Bonsai/Temp/UnityVS_bin:
 total 0
@@ -7421,12 +7434,17 @@ total 0
 total 0
 
 ./Bonsai/Temp/UnityVS_obj:
-total 0
-0 Debug/
+total 4
+4 Debug/
 
 ./Bonsai/Temp/UnityVS_obj/Debug:
-total 0
-0 TempPE/
+total 36
+ 1 Bonsai.csproj.CoreCompileInputs.cache
+ 1 Bonsai.Editor.csproj.CoreCompileInputs.cache
+32 DesignTimeResolveAssemblyReferencesInput.cache
+ 0 TempPE/
+ 1 Unity.PackageManagerUI.Editor.csproj.CoreCompileInputs.cache
+ 1 UnityEditor.StandardEvents.csproj.CoreCompileInputs.cache
 
 ./Bonsai/Temp/UnityVS_obj/Debug/TempPE:
 total 0

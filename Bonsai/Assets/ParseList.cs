@@ -8,17 +8,12 @@ using System.Text.RegularExpressions;
 
 public class ParseList : MonoBehaviour
 {
-    private int maxLevels = 0;
-    public float desiredConnectedNodeDistance = 1;
-    public float connectedNodeForce = 1;
-    public float disconnectedNodeForce = 1;
-    public List<Node> nodes;
     public string[] strValues;
     public List<string> folders;
+    public int lineCount;
     // Use this for initialization
     public void Start()
     {
-        nodes = new List<Node>();
         GameObject trunkCylinder = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
         trunkCylinder.name = ".:";
         ParseTxtFile();
@@ -34,11 +29,12 @@ public class ParseList : MonoBehaviour
         //Debug.Log("Pre 'MatchFolder()' script");
         GrowLocalTree(MatchFolder(".:"));
         //Debug.Log("Folders: " + folders);
-        for(int k = 0;k < folders.Count;k++)
+        int k = 0;
+        for (int k2 = k; k2 < folders.Count; k2++)
         {
             GrowLocalTree(MatchFolder(folders[k]));
+            k = k2;
         }
-        //Debug.Log("Post 'MatchFolder()' script");
     }
     int MatchFolder(string root)
     {
@@ -66,11 +62,17 @@ public class ParseList : MonoBehaviour
             scale = 3;
         else
             scale = 1;
-        int size = Int32.Parse(Regex.Match(strValues[lineNumber+1], @"\d+").Value);
+        int size;
+        if (Int32.Parse(Regex.Match(strValues[lineNumber + 1], @"\d+").Value) != 0)
+        {
+            size = Int32.Parse(Regex.Match(strValues[lineNumber + 1], @"\d+").Value);
+        }
+        else
+            size = 1;
         GameObject trunkCylinder = GameObject.Find(strValues[lineNumber]);
         //Debug.Log("Trunk name is: " + strValues[lineNumber]);
         Boolean blankLine = false;
-        int lineCount = lineNumber + 2;
+        lineCount = lineNumber + 2;
         int taken = 0;
         while (blankLine == false)
         {
@@ -81,10 +83,19 @@ public class ParseList : MonoBehaviour
             }
             else
             {
-                string[] lineValues = strValues[lineCount].Split(' ');
-                //Debug.Log(lineValues.Length);
-                int fileSize = Int32.Parse(lineValues[lineValues.Length - 2]);
-                string fileName = lineValues[lineValues.Length - 1];
+                string slightlyShorterLine = strValues[lineCount].TrimStart(' ');
+                //Debug.Log("slightlyShorterLine: " + slightlyShorterLine);
+                string[] lineValues = slightlyShorterLine.Split(' ');
+                int fileSize = Int32.Parse(lineValues[0]);
+                //Debug.Log("fileSize: "+fileSize);
+                string fileName_ws = slightlyShorterLine.TrimStart(lineValues[0].ToCharArray());
+                string fileName = fileName_ws.TrimStart(' ');
+                //Debug.Log("fileName: " + fileName);
+
+
+                //int fileSize = Int32.Parse(lineValues[lineValues.Length - 2]);
+                //int fileSize = Int32.Parse(lineValues[lineValues.Length - 2]);
+                //string fileName = lineValues[lineValues.Length - 1];
                 //Debug.Log("Size = " + fileSize + ", Name: " + fileName);
                 taken += fileSize;
                 int range = taken - (taken - fileSize);
@@ -129,9 +140,9 @@ public class ParseList : MonoBehaviour
                 {
                     //Debug.Log(fileName + " is not a Folder.");
                 }
-
             }
             lineCount++;
+            //Debug.Log("Near the end. Here's the lineCount: " + lineCount);
         }
     }
         
