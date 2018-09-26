@@ -68,6 +68,55 @@ public class ParseList : MonoBehaviour
             scale = 1;
         return scale;
     }
+    Color DetermineColor(string fileString)
+    {
+        Color fileColor;
+        if (fileString[fileString.Length - 1] == '/')
+            fileColor = new Color(134f / 255f, 90f / 255f, 4f/255f, 0.5f);
+        else
+        {
+            string[] fileArray = fileString.Split('.');
+            string type = fileArray[fileArray.Length - 1];
+            Debug.Log("Type: " + type);
+
+            //SCOS Colors
+            if (type == "tf" || type == "tfvars" || type == "tfstate")
+                fileColor = Color.blue;
+            else if (type == "md")
+                fileColor = Color.magenta;
+            else if (type == "yaml")
+                fileColor = Color.yellow;
+            else if (type == "js")
+                fileColor = Color.magenta;
+            else if (type == "sh" || type == "sample")
+                fileColor = Color.red;
+            else if (type == "exs")
+                fileColor = Color.green;
+            else if (type == "conf")
+                fileColor = Color.blue;
+            else
+                fileColor = Color.gray;
+            
+            ////Unity Colors
+            //if (type == "info" || type == "resource")
+            //    fileColor = Color.gray;
+            //else if (type == "mat")
+            //    fileColor = Color.magenta;
+            //else if (type == "meta")
+            //    fileColor = Color.gray;
+            //else if (type == "png")
+            //    fileColor = Color.yellow;
+            //else if (type == "prefab")
+            //    fileColor = Color.green;
+            //else if (type == "shader")
+            //    fileColor = Color.red;
+            //else if (type == "wav")
+            //    fileColor = Color.blue;
+            //else
+            //    fileColor = Color.gray;
+        }
+        return fileColor;
+    }
     void GrowLocalTree(int lineNumber)
     {
         int scale = SetScale(lineNumber);
@@ -95,37 +144,30 @@ public class ParseList : MonoBehaviour
                 taken += fileSize;
                 int range = taken - (taken - fileSize);
                 float angle = taken - (float)range / 2;
-                //
-                // Basically grab the parent folder name, and use that to look up a line with that name
-                // 
-                // Then copy that line, and append more points to it
-                // 
-                // Then rename it to include the fileName
-                //
-                // Then maybe add this "size" to the parent "size"?
-                //
                 GameObject lineObject = Instantiate(GameObject.Find(parent+"/"));
                 lineObject.name = parent + "/" + fileName;
                 Debug.Log("Line Name = " + lineObject.name);
                 LineRenderer fileBranch = lineObject.GetComponent<LineRenderer>();
+                float width;
                 if (fileSize == 0)
-                {
-                    fileBranch.startWidth = 0.25f;
-                    fileBranch.endWidth = 0.25f;
-                }
+                    width = 0.25f;
                 else
-                {
-                    fileBranch.startWidth = Mathf.Log10(fileSize) / 1;
-                    fileBranch.endWidth = Mathf.Log10(fileSize) / 1;
-                }
-                fileBranch.SetVertexCount(fileBranch.positionCount+2);
+                    width = Mathf.Log10(fileSize) / 1;
+                fileBranch.startWidth = width;
+                fileBranch.endWidth = width;
+                GameObject.Find(parent + "/").GetComponent<LineRenderer>().startWidth += width;
+                fileBranch.positionCount = (fileBranch.positionCount+2);
                 fileBranch.SetPosition(fileBranch.positionCount-2, fileBranch.GetPosition(fileBranch.positionCount-3) + new Vector3(0, scale * 30,0));
                 fileBranch.SetPosition(fileBranch.positionCount-1, fileBranch.GetPosition(fileBranch.positionCount-3) + new Vector3(
                     scale * 50 * Mathf.Cos(angle * 360 / size * Mathf.PI / 180),
                     scale * 50,
                     scale * 50 * Mathf.Sin(angle * 360 / size * Mathf.PI / 180)
                 ));
+
                 Renderer rend = fileBranch.GetComponent<Renderer>();
+                Color lineColor = DetermineColor(fileName);
+                rend.material.color = lineColor;
+                rend.material.SetColor("_EmissionColor", lineColor);
 
 
                 if (fileName[fileName.Length - 1] == '/')
