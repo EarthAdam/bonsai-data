@@ -5007,7 +5007,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!23 &244631643
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5072,7 +5072,7 @@ Transform:
   m_GameObject: {fileID: 244631642}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 18, y: 0, z: -11.5}
-  m_LocalScale: {x: 30, y: 1, z: 30}
+  m_LocalScale: {x: 500, y: 1, z: 500}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
@@ -18972,6 +18972,10 @@ Prefab:
       propertyPath: zoomSpeed
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 2018786, guid: 4ce6257f2f94b4e4ca299c4a47cd0dc0, type: 2}
+      propertyPath: far clip plane
+      value: 5000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ce6257f2f94b4e4ca299c4a47cd0dc0, type: 2}
   m_IsPrefabParent: 0
@@ -28090,7 +28094,7 @@ Transform:
   m_GameObject: {fileID: 1486945431}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -125, y: 0, z: -125}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -31015,11 +31019,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 742d5c9123fede843a1c7c649bf341fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  desiredConnectedNodeDistance: 1
-  connectedNodeForce: 1
-  disconnectedNodeForce: 1
   strValues: []
   folders: []
+  lineCount: 0
 --- !u!4 &1653165487
 Transform:
   m_ObjectHideFlags: 0
@@ -36409,7 +36411,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1986490378
 Transform:
   m_ObjectHideFlags: 0
@@ -36418,7 +36420,7 @@ Transform:
   m_GameObject: {fileID: 1986490377}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
   - {fileID: 310631267}
   - {fileID: 1505091680}
