@@ -77,11 +77,10 @@ public class ParseList : MonoBehaviour
         {
             string[] fileArray = fileString.Split('.');
             string type = fileArray[fileArray.Length - 1];
-            Debug.Log("Type: " + type);
 
             //SCOS Colors
             if (type == "tf" || type == "tfvars" || type == "tfstate")
-                fileColor = Color.blue;
+                fileColor = Color.green;
             else if (type == "md")
                 fileColor = Color.magenta;
             else if (type == "yaml")
@@ -91,7 +90,7 @@ public class ParseList : MonoBehaviour
             else if (type == "sh" || type == "sample")
                 fileColor = Color.red;
             else if (type == "exs")
-                fileColor = Color.green;
+                fileColor = Color.blue;
             else if (type == "conf")
                 fileColor = Color.blue;
             else
@@ -115,6 +114,7 @@ public class ParseList : MonoBehaviour
             //else
             //    fileColor = Color.gray;
         }
+        fileColor.a = 1;
         return fileColor;
     }
     void GrowLocalTree(int lineNumber)
@@ -122,7 +122,6 @@ public class ParseList : MonoBehaviour
         int scale = SetScale(lineNumber);
         int size = SetFileSize(lineNumber);
         string parent = strValues[lineNumber].TrimEnd(':');
-        Debug.Log("parent: " + parent.TrimEnd(':'));
         GameObject trunkCylinder = GameObject.Find(strValues[lineNumber]);
         Boolean blankLine = false;
         lineCount = lineNumber + 2;
@@ -140,14 +139,13 @@ public class ParseList : MonoBehaviour
                 int fileSize = Int32.Parse(lineValues[0]);
                 string fileName_ws = slightlyShorterLine.TrimStart(lineValues[0].ToCharArray());
                 string fileName = fileName_ws.TrimStart(' ');
-                Debug.Log("FileName: " + fileName);
                 taken += fileSize;
                 int range = taken - (taken - fileSize);
                 float angle = taken - (float)range / 2;
                 GameObject lineObject = Instantiate(GameObject.Find(parent+"/"));
                 lineObject.name = parent + "/" + fileName;
-                Debug.Log("Line Name = " + lineObject.name);
                 LineRenderer fileBranch = lineObject.GetComponent<LineRenderer>();
+                fileBranch.material = (Material)Resources.Load("2nd Layer", typeof(Material));
                 float width;
                 if (fileSize == 0)
                     width = 0.25f;
