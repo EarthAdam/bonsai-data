@@ -52,21 +52,23 @@ The Bonsai Data project that originally started at the 2016 MIT Reality Virtuall
 
 The standard force-directed graph projects nodes and edges in an omnidirectional way, meaning as more and more nodes are added, the structure grows freely in every direction, with no specific orientation or preference towards a particular direction. Our hope is to create a new approach, whereas the model is similar to a tree, where a central node serves as the trunk, and children branches fork out in one of two directions. With some of our future projects the intent is to make this really reflect a tree structure with an above ground branch system as well as an underground root system, although initially with the goal of visualizing file directories this will only be an above ground tree. Once we get the basics down, the groundwork will be set for reversing the direction for more unique cases.
 
+![](/images/Screenshot2.png)
+
 # Roadmap
 
-## Short-Term Goal
+## Short-Term Goal (SUCCESS!)
 
-Initially we want to be able to visualize the layout of a file directory by loading a log of its layout into Unity. From there, a 3D tree will be built with each branch reflecting each nested folder. The trunk being the root folder for the directory.
+- [x] Initially we want to be able to visualize the layout of a file directory by loading a log of its layout into Unity. From there, a 3D tree will be built with each branch reflecting each nested folder. The trunk being the root folder for the directory.
 
 ## Mid-Term Goal
 
-Be able to drop a compiled .exe file into any directory, and upon opening it scans the directory from that location, and creates a 3D tree
+- [ ] Be able to drop a compiled .exe file into any directory, and upon opening it scans the directory from that location, and creates a 3D tree
 
 ## Long-Term Goal
 
-Make this a time-based tree. For Git directories this is possible because every change is recorded with a timestamp. Other file systems may be more difficult unless they have some way of keeping track of changes over time.
+- [ ] Make this a time-based tree. For Git directories this is possible because every change is recorded with a timestamp. Other file systems may be more difficult unless they have some way of keeping track of changes over time.
 
 ## Eventually
 
-Once this works for the initial file directory use-case, we want to use this to visualize larger shared directory systems, budgets, associates, assets, and other organizational structures.
+- [ ] Once this works for the initial file directory use-case, we want to use this to visualize larger shared directory systems, budgets, associates, assets, and other organizational structures.
 
