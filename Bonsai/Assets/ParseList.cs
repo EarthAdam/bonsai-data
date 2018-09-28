@@ -9,18 +9,19 @@ public class ParseList : MonoBehaviour
     public string[] strValues;
     public List<string> folders;
     public int lineCount;
+    public int m;
     public void Start()
     {
         GameObject trunkCylinder = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
         trunkCylinder.name = ".:";
-        ParseTxtFile();
+        ParseTxtFile(m);
     }
     void Update()
     {
     }
-    void ParseTxtFile()
+    void ParseTxtFile(int m)
     {
-        string text = File.ReadAllText("../out.txt");
+        string text = File.ReadAllText("../out"+m+".txt");
         char[] separators = { ',', ';', '|', '\n' };
         strValues = text.Split(separators);
         GameObject seed = new GameObject();
@@ -167,6 +168,13 @@ public class ParseList : MonoBehaviour
                 rend.material.color = lineColor;
                 rend.material.SetColor("_EmissionColor", lineColor);
 
+                GameObject fileInfo = Instantiate(GameObject.Find("TextObject"));
+                fileInfo.GetComponent<TextMesh>().text = fileName + "\n" + fileSize;
+                fileInfo.transform.position = fileBranch.GetPosition(fileBranch.positionCount - 3) + new Vector3(
+                    scale * 50/2 * Mathf.Cos(angle * 360 / size * Mathf.PI / 180),
+                    scale * 40,
+                    scale * 50/2 * Mathf.Sin(angle * 360 / size * Mathf.PI / 180)
+                );
 
                 if (fileName[fileName.Length - 1] == '/')
                 {
@@ -178,6 +186,15 @@ public class ParseList : MonoBehaviour
                         scale * 50 * Mathf.Sin(angle * 360 / size * Mathf.PI / 180)
                     );
                     folders.Add(strValues[lineNumber].TrimEnd(':') + "/" + fileName.TrimEnd('/') + ":");
+
+                    GameObject folderInfo = Instantiate(GameObject.Find("TextObject"));
+                    folderInfo.GetComponent<TextMesh>().text = fileName + "\n" + fileSize;
+                    folderInfo.transform.position = trunkCylinder.transform.position + new Vector3(
+                        scale * 50 * Mathf.Cos(angle * 360 / size * Mathf.PI / 180),
+                        scale * 50,
+                        scale * 50 * Mathf.Sin(angle * 360 / size * Mathf.PI / 180)
+                    );
+                    folderInfo.GetComponent<TextMesh>().color = Color.yellow;
                 }
                 else
                 {
