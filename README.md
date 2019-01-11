@@ -62,6 +62,8 @@ The standard force-directed graph projects nodes and edges in an omnidirectional
 
 ## Mid-Term Goal
 
+- [x] Visualize a large set of git repositories as a forest (see image at bottom)
+- [x] Get a tree to show up on the Magic Leap (only works through Lumin SDK - ML Remote right now)
 - [ ] Be able to drop a compiled .exe file into any directory, and upon opening it scans the directory from that location, and creates a 3D tree
 
 ## Long-Term Goal
@@ -72,3 +74,5 @@ The standard force-directed graph projects nodes and edges in an omnidirectional
 
 - [ ] Once this works for the initial file directory use-case, we want to use this to visualize larger shared directory systems, budgets, associates, assets, and other organizational structures.
 
+SCOS Forest (Page 1 of the Smart Columbus Operating System directories)
+![](/images/SCOS3.png)
