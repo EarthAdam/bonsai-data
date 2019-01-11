@@ -1,0 +1,367 @@
+.:
+total 45
+4 alm/
+4 alm-durable/
+0 backends/
+4 bootstrap/
+4 env/
+8 Jenkinsfile
+4 modules/
+0 out.txt
+4 prod/
+8 README.md
+4 scripts/
+1 tf.sh*
+
+./alm:
+total 41
+ 1 certs.tf
+ 4 dns.tf
+ 4 files/
+ 4 iam.tf
+12 jenkins.tf
+ 4 main.tf
+ 4 README.md
+ 0 templates/
+ 0 variables/
+ 4 vpc.tf
+ 4 vpn.tf
+
+./alm/files:
+total 7
+4 instance_policy.json
+1 jenkins_relay_instance_policy.json
+1 oasis_id_rsa.pub
+1 oasis6_id_rsa.pub
+
+./alm/templates:
+total 8
+4 jenkins_instance_userdata.sh.tpl*
+4 task_definition.json.tpl
+
+./alm/variables:
+total 8
+4 alm.tfvars
+4 sandbox.tfvars
+
+./alm-durable:
+total 15
+4 container_registry.tf
+4 dns.tf
+1 efs.tf
+1 main.tf
+1 README.md
+4 s3.tf
+0 variables/
+
+./alm-durable/variables:
+total 2
+1 alm.tfvars
+1 sandbox.tfvars
+
+./backends:
+total 2
+1 alm.conf
+1 sandbox-alm.conf
+
+./bootstrap:
+total 9
+4 main.tf
+4 README.md
+0 terraform.tfstate.d/
+0 variables/
+1 variables.tf
+
+./bootstrap/terraform.tfstate.d:
+total 0
+0 alm/
+0 sandbox/
+
+./bootstrap/terraform.tfstate.d/alm:
+total 8
+8 terraform.tfstate
+
+./bootstrap/terraform.tfstate.d/sandbox:
+total 8
+8 terraform.tfstate
+
+./bootstrap/variables:
+total 2
+1 alm.tfvars
+1 sandbox.tfvars
+
+./env:
+total 45
+4 certs.tf
+4 deploy-dev.Jenkinsfile
+4 destroy-dev.Jenkinsfile
+4 dns.tf
+4 features/
+0 files/
+0 helm/
+0 k8s/
+4 main.tf
+1 README.md
+4 security_groups.tf
+4 variables/
+8 vpc.tf
+4 vpc_peer.tf
+
+./env/features:
+total 64
+8 ckan_external.hcl
+4 ckan_internal.hcl
+8 ckan_shared.hcl
+4 datalake.hcl
+8 eks-cluster.hcl
+8 joomla.hcl
+8 kong.hcl
+4 kylo.hcl
+4 lime_db.hcl
+4 load_balancer.hcl
+4 streaming-data-aggregator.hcl
+
+./env/files:
+total 8
+4 ckan/
+0 eks/
+4 joomla/
+0 kong/
+
+./env/files/ckan:
+total 25
+1 ckan-2.8.sh.tpl*
+4 nginx-external.conf.tpl
+4 nginx-internal.conf
+8 production.ini.tpl
+8 setup.sh*
+
+./env/files/eks:
+total 4
+4 workers_pre_userdata*
+
+./env/files/joomla:
+total 520
+  4 httpd.conf
+  4 joomla_unite_config.xml.tpl
+  4 nginx.conf
+  4 setup.sh*
+504 unite.phar
+
+./env/files/kong:
+total 32
+28 kong.conf.tpl
+ 4 setup.sh*
+
+./env/helm:
+total 4
+4 cluster-infra/
+
+./env/helm/cluster-infra:
+total 21
+1 Chart.yaml
+4 README.md
+4 run-config.yaml
+8 templates/
+4 values.yaml
+
+./env/helm/cluster-infra/templates:
+total 45
+1 _helpers.tpl
+1 alb-ingress-clusterrolebinding.yaml
+4 alb-ingress-deployment.yaml
+1 alb-ingress-serviceaccount.yaml
+1 calico-crd.yaml
+4 calico-node-clusterrole.yaml
+1 calico-node-clusterrolebinding.yaml
+4 calico-node-daemonset.yaml
+1 calico-node-serviceaccount.yaml
+1 calico-typha-cpha-clusterrole.yaml
+1 calico-typha-cpha-clusterrolebinding.yaml
+1 calico-typha-cpha-role.yaml
+1 calico-typha-cpha-rolebinding.yaml
+1 calico-typha-cpha-serviceaccount.yaml
+4 calico-typha-deployment.yaml
+1 calico-typha-hpa-configmap.yaml
+4 calico-typha-hpa-deployment.yaml
+4 calico-typha-service.yaml
+1 external-dns-clusterrole.yaml
+1 external-dns-clusterrolebinding.yaml
+4 external-dns-deployment.yaml
+1 external-dns-serviceaccount.yaml
+1 resource-limits.yaml
+1 storage-class.yaml
+
+./env/k8s:
+total 0
+0 tiller-role/
+
+./env/k8s/tiller-role:
+total 1
+1 01-tiller-admin.yaml
+
+./env/variables:
+total 17
+1 destroy.tfvars
+4 dev.tfvars
+4 prod.tfvars
+4 sandbox.tfvars
+4 staging.tfvars
+
+./modules:
+total 12
+4 cloudbreak/
+4 datalake/
+0 ecr/
+0 efs/
+0 efs_mount_target/
+4 iam/
+0 lime_db/
+0 old_prod_load_balancer/
+0 vpn/
+
+./modules/cloudbreak:
+total 36
+4 database.tf
+8 iam.tf
+4 load_balancer.tf
+8 main.tf
+4 outputs.tf
+4 security_groups.tf
+0 templates/
+4 variables.tf
+
+./modules/cloudbreak/templates:
+total 12
+4 ensure_credentials.sh*
+4 Profile.tpl
+4 start_cloudbreak.sh*
+
+./modules/datalake:
+total 58
+1 cloud_storage.tf
+4 cloudbreak_blueprint.tf
+8 cloudbreak_cluster.tf
+4 dns.tf
+4 hive_db.tf
+4 iam.tf
+4 load_balancer.tf
+1 main.tf
+4 outputs.tf
+4 ranger_db.tf
+8 security_groups.tf
+4 templates/
+8 variables.tf
+
+./modules/datalake/templates:
+total 28
+ 1 cloudbreak-instance-template.json
+16 datalake-ambari-blueprint.json.tpl
+ 4 datalake-cluster-template.json.tpl
+ 1 ensure_blueprint.sh*
+ 1 ensure_cluster.sh*
+ 1 ensure_databases.sh*
+ 4 ensure_ldap.sh*
+
+./modules/ecr:
+total 16
+4 main.tf
+8 repository_policy.json
+4 repository_policy.sandbox.json
+
+./modules/efs:
+total 3
+1 main.tf
+1 outputs.tf
+1 variables.tf
+
+./modules/efs_mount_target:
+total 5
+4 efs.tf
+1 variables.tf
+
+./modules/iam:
+total 36
+4 dns.tf
+0 files/
+8 freeipa_server.tf
+4 keycloak_lb.tf
+4 keycloak_server.tf
+4 outputs.tf
+8 security_groups.tf
+0 templates/
+4 variables.tf
+
+./modules/iam/files:
+total 4
+4 freeipa/
+
+./modules/iam/files/freeipa:
+total 17
+4 add_binduser.sh*
+1 finalize_replica.sh*
+4 register_replica.sh*
+4 setup_master.sh*
+4 setup_replica.sh*
+
+./modules/iam/templates:
+total 8
+8 keycloak-userdata.sh*
+
+./modules/lime_db:
+total 9
+4 main.tf
+1 outputs.tf
+4 variables.tf
+
+./modules/old_prod_load_balancer:
+total 8
+8 main.tf
+
+./modules/vpn:
+total 9
+4 main.tf
+1 outputs.tf
+0 templates/
+4 variables.tf
+
+./modules/vpn/templates:
+total 4
+4 openvpn_init.tpl*
+
+./prod:
+total 32
+24 cloudwatch_monitoring.tf
+ 4 dns.tf
+ 0 files/
+ 4 main.tf
+ 0 variables/
+
+./prod/files:
+total 0
+0 lambda/
+
+./prod/files/lambda:
+total 0
+0 alert_handler/
+
+./prod/files/lambda/alert_handler:
+total 4
+4 index.js
+
+./prod/variables:
+total 2
+1 prod.tfvars
+1 sandbox.tfvars
+
+./scripts:
+total 9
+0 bin/
+4 destroy_albs_created_via_kubernetes.sh*
+1 helm_file_change_check.sh*
+4 tf-init*
+
+./scripts/bin:
+total 5600
+2776 json2hcl.v0.0.6.Darwin.x86_64
+2824 json2hcl.v0.0.6.Linux.x86_64
