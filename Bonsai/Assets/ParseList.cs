@@ -16,7 +16,7 @@ public class ParseList : MonoBehaviour
     GameObject trunkCylinder = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
     trunkCylinder.transform.position = transform.position;
     trunkCylinder.name = m + "|" + ".:";
-    trunkCylinder.transform.localScale = new Vector3(LeapScale, LeapScale, LeapScale);
+    trunkCylinder.transform.localScale = new Vector3(10*LeapScale, 10 * LeapScale, 10 * LeapScale);
     ParseTxtFile(m);
   }
   void ParseTxtFile(int m)
