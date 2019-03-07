@@ -10,18 +10,23 @@ public class ParseList : MonoBehaviour
   public List<string> folders;
   public int lineCount;
   public float LeapScale;
-  public int m;
+  public string m;
   public void Start()
   {
-    GameObject trunkCylinder = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
-    trunkCylinder.transform.position = transform.position;
-    trunkCylinder.name = m + "|" + ".:";
-    trunkCylinder.transform.localScale = new Vector3(10*LeapScale, 10 * LeapScale, 10 * LeapScale);
-    ParseTxtFile(m);
+    if (m != null)
+    {
+      m = name;
+      GameObject trunkCylinder = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
+      trunkCylinder.transform.position = transform.position;
+      trunkCylinder.name = m + "|" + ".:";
+      trunkCylinder.transform.localScale = new Vector3(10 * LeapScale, 10 * LeapScale, 10 * LeapScale);
+      ParseTxtFile(m);
+    }
+    
   }
-  void ParseTxtFile(int m)
+  void ParseTxtFile(string m)
   {
-    string text = File.ReadAllText("out" + m + ".txt");
+    string text = File.ReadAllText("Repos/"+m + ".txt");
     char[] separators = { ',', ';', '|', '\n' };
     strValues = text.Split(separators);
     GameObject seed = new GameObject();
@@ -29,12 +34,21 @@ public class ParseList : MonoBehaviour
     seedLine.SetVertexCount(1);
     seedLine.SetPosition(0, transform.position + new Vector3(0, 0, 0));
     seed.name = m + "|" + "./";
+    Debug.Log("Did we get to here?");
+
+    GameObject repo = Instantiate(GameObject.Find("TextObject"));
+    repo.GetComponent<TextMesh>().text = m;
+    repo.GetComponent<TextMesh>().transform.localScale = new Vector3(-LeapScale / 2, LeapScale / 2, LeapScale / 2);
+    repo.transform.position = transform.position;
+
     GrowLocalTree(MatchFolder(".:"));
     int k = 0;
     for (int k2 = k; k2 < folders.Count; k2++)
     {
       GrowLocalTree(MatchFolder(folders[k]));
       k = k2;
+      Debug.Log("Did we get to here?");
+
     }
   }
   int MatchFolder(string root)
@@ -121,6 +135,7 @@ public class ParseList : MonoBehaviour
   }
   void GrowLocalTree(int lineNumber)
   {
+    Debug.Log("Did we get to here?");
     int scale = SetScale(lineNumber);
     int size = SetFileSize(lineNumber);
     string parent = m + "|" + strValues[lineNumber].TrimEnd(':');

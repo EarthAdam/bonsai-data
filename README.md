@@ -14,6 +14,8 @@ The Bonsai Data project that originally started at the 2016 MIT Reality Virtuall
 
 # Tutorial
 
+## Option 1: Single Directory
+
 1. Create a directory list of a directory you would like to visualize. 
 
    In CMD, navigate to the directory you want to visualize, and then enter in this line of code: `ls -s -R > out.txt`
@@ -21,6 +23,15 @@ The Bonsai Data project that originally started at the 2016 MIT Reality Virtuall
 2. Clone this repo to a new folder (`git clone git@github.com:OhioAdam/bonsai-data.git` in cmd)
 3. Relocate the **out.txt** file that you created in step 1 into this new folder
 4. Run this using Unity 2017.1 or newer. Press the "Play" button, and use your mouse to navigate the camera around the tree.
+
+## Option 2: List of Directories
+
+1. Create a list of directory names for directories within an organization, and save that file as something like `scos-repos.list`
+2. Run something to the effect of this in your terminal (Git Bash for Windows):
+     for i in $(cat ~/Documents/Foliage/Bonsai/Repos/scos-repos.list); do git clone git@github.com:SmartColumbusOs/$i; cd ~/Documents/Foliage/Bonsai/Repos/$i; ls -sR > ~/Documents/Foliage/Bonsai/Repos/$i.txt && cd ~/Documents/Foliage/Bonsai/Repos/ ; done
+3. Make sure `ParseList.cs` and `DirectoryScanner.cs` files are pointing to a file such as `Repos` like in the above code example
+4. Hit "Play" in Unity
+
 
 # Force Directed Graphing
 
@@ -67,8 +78,8 @@ The standard force-directed graph projects nodes and edges in an omnidirectional
 - [ ] Be able to drop a compiled .exe file into any directory, and upon opening it scans the directory from that location, and creates a 3D tree
 
 ## Long-Term Goal
-
-- [ ] Make this a time-based tree. For Git directories this is possible because every change is recorded with a timestamp. Other file systems may be more difficult unless they have some way of keeping track of changes over time.
+- [x] Be able to run this on all directories in a GitHub account in a somewhat automated fashion
+- [ ] Make these time-based trees. For Git directories this is possible because every change is recorded with a timestamp. Other file systems may be more difficult unless they have some way of keeping track of changes over time.
 
 ## Eventually
 
