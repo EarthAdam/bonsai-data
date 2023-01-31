@@ -1,0 +1,534 @@
+Using pre-set license
+Built from '2022.2/release' branch; Version is '2022.2.2f1 (c93c5d3acf5b) revision 13188189'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22621) 64bit Professional' Language: 'en' Physical Memory: 16239 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2022.2.2f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker2
+-projectPath
+C:/Users/adam/Documents/GitHub/bonsai-data/Bonsai
+-logFile
+Logs/AssetImportWorker2.log
+-srvPort
+61058
+Successfully changed project path to: C:/Users/adam/Documents/GitHub/bonsai-data/Bonsai
+C:/Users/adam/Documents/GitHub/bonsai-data/Bonsai
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [4668] Host "[IP] 192.168.1.116 [Port] 0 [Flags] 2 [Guid] 2868396062 [EditorId] 2868396062 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-H60S779) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [4668] Host "[IP] 192.168.1.116 [Port] 0 [Flags] 2 [Guid] 2868396062 [EditorId] 2868396062 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-H60S779) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+Refreshing native plugins compatible for Editor in 191.68 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.2.2f1 (c93c5d3acf5b)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.2.2f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/adam/Documents/GitHub/bonsai-data/Bonsai/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1660 Ti (ID=0x2191)
+    Vendor:   NVIDIA
+    VRAM:     5991 MB
+    Driver:   30.0.15.1289
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.2.2f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.2.2f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.2.2f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56456
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.2.2f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.2.2f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.007581 seconds.
+- Loaded All Assemblies, in  0.662 seconds
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 267 ms
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.609 seconds
+Domain Reload Profiling:
+	ReloadAssembly (357ms)
+		BeginReloadAssembly (87ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		LoadAllAssembliesAndSetupDomain (0ms)
+			LoadAssemblies (86ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (297ms)
+				TypeCache.Initialize (296ms)
+					TypeCache.ScanAssembly (295ms)
+				ResolveRequiredComponents (0ms)
+		FinalizeReload (0ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (0ms)
+			SetupLoadedEditorAssemblies (548ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (357ms)
+				SetLoadedEditorAssemblies (6ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (131ms)
+				ProcessInitializeOnLoadMethodAttributes (52ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.680 seconds
+Refreshing native plugins compatible for Editor in 14.68 ms, found 2 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.924 seconds
+Domain Reload Profiling:
+	ReloadAssembly (246ms)
+		BeginReloadAssembly (137ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (23ms)
+		LoadAllAssembliesAndSetupDomain (431ms)
+			LoadAssemblies (89ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (399ms)
+				TypeCache.Initialize (245ms)
+					TypeCache.ScanAssembly (241ms)
+				ResolveRequiredComponents (4ms)
+		FinalizeReload (0ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (0ms)
+			SetupLoadedEditorAssemblies (739ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (16ms)
+				SetLoadedEditorAssemblies (7ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (63ms)
+				ProcessInitializeOnLoadAttributes (501ms)
+				ProcessInitializeOnLoadMethodAttributes (147ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 22.70 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2669 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 110 unused Assets / (429.3 KB). Loaded Objects now: 3083.
+Memory consumption went from 448.6 MB to 448.1 MB.
+Total: 6.683900 ms (FindLiveObjects: 0.269200 ms CreateObjectMapping: 0.257000 ms MarkObjects: 5.846900 ms  DeleteObjects: 0.309800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+========================================================================
+Received Import Request.
+  Time since last request: 716727.802023 seconds.
+  path: Assets/Resources/Prefabs
+  artifactKey: Guid(fd0c3eea4dfe67845b476dea59698652) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/Prefabs using Guid(fd0c3eea4dfe67845b476dea59698652) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b285274f981d6259550775080651431b') in 0.009817 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 38.740509 seconds.
+  path: Assets/Resources/Prefabs/Data Trees.prefab
+  artifactKey: Guid(30a75f85d4ec271448d9d043b9b15a8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Resources/Prefabs/Data Trees.prefab using Guid(30a75f85d4ec271448d9d043b9b15a8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f342ecef0a2e872a8e9f4818c5f9018') in 0.173405 seconds 
+Number of asset objects unloaded after import = 193
+========================================================================
+Received Import Request.
+  Time since last request: 176.239239 seconds.
+  path: Assets/NatureStarterKit2/Standard Assets/Effects/TessellationShaders/Textures/CliffHeight.png
+  artifactKey: Guid(17da6d53ec93a0444bd0f751b1d02477) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/NatureStarterKit2/Standard Assets/Effects/TessellationShaders/Textures/CliffHeight.png using Guid(17da6d53ec93a0444bd0f751b1d02477) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a50e150c422003f46ad436fb202ce65') in 0.035743 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/NatureStarterKit2/Nature/tree01_Textures/diffuse.png
+  artifactKey: Guid(bc1041f423dc3314e8998435028d0fd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/NatureStarterKit2/Nature/tree01_Textures/diffuse.png using Guid(bc1041f423dc3314e8998435028d0fd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a10698e2adb093ec0ff7cb1ee93ddc7d') in 0.031620 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/NatureStarterKit2/Nature/tree03_Textures/diffuse.png
+  artifactKey: Guid(f82d7808d61c0fe40ac870b61d38c05f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/NatureStarterKit2/Nature/tree03_Textures/diffuse.png using Guid(f82d7808d61c0fe40ac870b61d38c05f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86fd14f70cfe5f71a075ec43405172ae') in 0.014133 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000064 seconds.
+  path: Assets/NatureStarterKit2/Nature/tree04_Textures/diffuse.png
+  artifactKey: Guid(2358a0d0a1cf20d4ea0018c742bd06e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/NatureStarterKit2/Nature/tree04_Textures/diffuse.png using Guid(2358a0d0a1cf20d4ea0018c742bd06e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6de5733c41fea67a8dd0f749ea41752') in 0.014785 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/NatureStarterKit2/Nature/bush06_Textures/diffuse.png
+  artifactKey: Guid(c40a1e1e56a4e2a48880f0c13f4af075) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/NatureStarterKit2/Nature/bush06_Textures/diffuse.png using Guid(c40a1e1e56a4e2a48880f0c13f4af075) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '406c7092bde05f24383436291eb5bc71') in 0.016612 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/NatureStarterKit2/Nature/tree02_Textures/diffuse.png
+  artifactKey: Guid(da4827ac8df28d1439b10b2ec7735a68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/NatureStarterKit2/Nature/tree02_Textures/diffuse.png using Guid(da4827ac8df28d1439b10b2ec7735a68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ece0440f8cbcf4565a1ed9d199f4e5b') in 0.025804 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 29.932054 seconds.
+  path: Assets/Bonsai Code/Hackathon Code/DrawLine3.cs
+  artifactKey: Guid(af97570e05740a14783725b4c3fca214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Bonsai Code/Hackathon Code/DrawLine3.cs using Guid(af97570e05740a14783725b4c3fca214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '024e428bda2fd34be48b5da0a8b71fcc') in 0.011579 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.005299 seconds.
+  path: Assets/Bonsai Code/Hackathon Code/DrawLine5.cs
+  artifactKey: Guid(17ccfca8b35fa0e45a03e484fa3df390) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Bonsai Code/Hackathon Code/DrawLine5.cs using Guid(17ccfca8b35fa0e45a03e484fa3df390) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '548e69adbabc8ba4cadd20324e019aeb') in 0.006959 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.004314 seconds.
+  path: Assets/Bonsai Code/Hackathon Code/DrawLine9.cs
+  artifactKey: Guid(40ab4bbbda6e562458fc155c9cef928a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Bonsai Code/Hackathon Code/DrawLine9.cs using Guid(40ab4bbbda6e562458fc155c9cef928a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec644e56358e9b246809241200bdc795') in 0.007433 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.003967 seconds.
+  path: Assets/Bonsai Code/Hackathon Code/DrawLine10.cs
+  artifactKey: Guid(4a8c285e993e1e0489430bacd289bcae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Bonsai Code/Hackathon Code/DrawLine10.cs using Guid(4a8c285e993e1e0489430bacd289bcae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47c887d411a7ee76b186e94e1b975484') in 0.007558 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.004464 seconds.
+  path: Assets/Bonsai Code/Hackathon Code/DrawLine6.cs
+  artifactKey: Guid(e1c4a9b67a0974749a9a46567d651b90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Bonsai Code/Hackathon Code/DrawLine6.cs using Guid(e1c4a9b67a0974749a9a46567d651b90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a0ed945ce74d03aa23f0a3d29504cd3') in 0.006792 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.009263 seconds.
+  path: Assets/Bonsai Code/Hackathon Code/DrawLine14.cs
+  artifactKey: Guid(f18d02fd720456547bc766f1793012a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Bonsai Code/Hackathon Code/DrawLine14.cs using Guid(f18d02fd720456547bc766f1793012a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '947cb362d3c40f903b7089918fddde7c') in 0.007075 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.003308 seconds.
+  path: Assets/Bonsai Code/Hackathon Code/DrawLine12.cs
+  artifactKey: Guid(1e2d8a76cfa306145a8c9dbe07692b75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Bonsai Code/Hackathon Code/DrawLine12.cs using Guid(1e2d8a76cfa306145a8c9dbe07692b75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97ad54961a2225ff70fcb4e080c27bd2') in 0.006478 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.003498 seconds.
+  path: Assets/Bonsai Code/Hackathon Code/DrawLine15.cs
+  artifactKey: Guid(4316eba565ddf8249ac4c8f2cbe62a17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Bonsai Code/Hackathon Code/DrawLine15.cs using Guid(4316eba565ddf8249ac4c8f2cbe62a17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e04b9ac63e0ec14c07c0af4289fc006') in 0.007678 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.003544 seconds.
+  path: Assets/Bonsai Code/Hackathon Code/DrawLine2.cs
+  artifactKey: Guid(e7fa9aebc7ed41341a0bd225f878fa2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Bonsai Code/Hackathon Code/DrawLine2.cs using Guid(e7fa9aebc7ed41341a0bd225f878fa2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6903df3f31a677824a5d0e8aac892c41') in 0.006805 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.003200 seconds.
+  path: Assets/Bonsai Code/BonsaiLabel.cs
+  artifactKey: Guid(ea794559b13b5ab4aab1c3a3e004b490) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Bonsai Code/BonsaiLabel.cs using Guid(ea794559b13b5ab4aab1c3a3e004b490) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9560d6b99fd189151b0fbe964eea3ec3') in 0.005908 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.003755 seconds.
+  path: Assets/Bonsai Code/BonsaiBranch.cs
+  artifactKey: Guid(05b2a0bacab2981419051d132c32411f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Bonsai Code/BonsaiBranch.cs using Guid(05b2a0bacab2981419051d132c32411f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b912c19bc270307173675cd38a91491') in 0.006345 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.003738 seconds.
+  path: Assets/Bonsai Code/DataGlow.mat
+  artifactKey: Guid(81e1b8967bc246043ac1219eb95b2775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Bonsai Code/DataGlow.mat using Guid(81e1b8967bc246043ac1219eb95b2775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c27b0db19b1d624e3cbf9f11f4248cc') in 0.028977 seconds 
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.003633 seconds.
+  path: Assets/Bonsai Code/Hackathon Code/DrawLine11.cs
+  artifactKey: Guid(d2a63f188f34d874a9d1a6d82564b1b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Bonsai Code/Hackathon Code/DrawLine11.cs using Guid(d2a63f188f34d874a9d1a6d82564b1b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0eacf31be8ea2aa3d97eaa73cbcb8af') in 0.006834 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.003862 seconds.
+  path: Assets/Bonsai Code/Hackathon Code/Excel Doc.mat
+  artifactKey: Guid(8696d875c8dae354a923123d7374e059) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Bonsai Code/Hackathon Code/Excel Doc.mat using Guid(8696d875c8dae354a923123d7374e059) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5983d56c795532d782ea870107eef8a9') in 0.012747 seconds 
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.004998 seconds.
+  path: Assets/Bonsai Code/Hackathon Code/Word Doc.mat
+  artifactKey: Guid(a07140ba75f476849834af90f77a42d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Bonsai Code/Hackathon Code/Word Doc.mat using Guid(a07140ba75f476849834af90f77a42d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84a2c8229a3dea2552f9dbf00ad11cd9') in 0.012629 seconds 
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.003996 seconds.
+  path: Assets/Bonsai Code/Hackathon Code/DrawLine4.cs
+  artifactKey: Guid(8df3c7457244e75448ff9e4a0aa5643e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Bonsai Code/Hackathon Code/DrawLine4.cs using Guid(8df3c7457244e75448ff9e4a0aa5643e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '891c01f3529a9d32d297603edfc776b0') in 0.005375 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.003476 seconds.
+  path: Assets/Bonsai Code/Hackathon Code/DrawLine13.cs
+  artifactKey: Guid(0ca249cdb500a4c44811a04f958657d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Bonsai Code/Hackathon Code/DrawLine13.cs using Guid(0ca249cdb500a4c44811a04f958657d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7bce73e2e9bb0a9687902736b86ce43a') in 0.006390 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.004655 seconds.
+  path: Assets/Bonsai Code/Hackathon Code/DrawLine.cs
+  artifactKey: Guid(24199751b8e0f3542bfd368687fa570b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Bonsai Code/Hackathon Code/DrawLine.cs using Guid(24199751b8e0f3542bfd368687fa570b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7057e5da79a9dc7a50d8eda079410973') in 0.005317 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.004904 seconds.
+  path: Assets/Bonsai Code/Hackathon Code/DrawLine7.cs
+  artifactKey: Guid(0a8ed8f4123808b48a321555677e5280) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Bonsai Code/Hackathon Code/DrawLine7.cs using Guid(0a8ed8f4123808b48a321555677e5280) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7e4c3995d819e7e8d555dc11efeec77') in 0.005833 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.004440 seconds.
+  path: Assets/Bonsai Code/Hackathon Code/Image Doc.mat
+  artifactKey: Guid(04cff9200d74f49468f9b45e84927b6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Bonsai Code/Hackathon Code/Image Doc.mat using Guid(04cff9200d74f49468f9b45e84927b6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2a1ea57973fa603d592bd0a40801daa') in 0.013472 seconds 
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.006428 seconds.
+  path: Assets/Bonsai Code/Hackathon Code/PowerPt Doc.mat
+  artifactKey: Guid(010b127a2dd8b3d4d8e13433539987a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Bonsai Code/Hackathon Code/PowerPt Doc.mat using Guid(010b127a2dd8b3d4d8e13433539987a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13bd39df34fc502e4e39a29fced98b40') in 0.012753 seconds 
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.005950 seconds.
+  path: Assets/Bonsai Code/Hackathon Code/DrawLine8.cs
+  artifactKey: Guid(844a279fca51bf246a6a01863e1ea039) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Bonsai Code/Hackathon Code/DrawLine8.cs using Guid(844a279fca51bf246a6a01863e1ea039) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79d5af615e567319f768670631e658e6') in 0.006190 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.005799 seconds.
+  path: Assets/Bonsai Code/Hackathon Code/Video Doc.mat
+  artifactKey: Guid(fe035d005768cc8418b46d93971338f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Bonsai Code/Hackathon Code/Video Doc.mat using Guid(fe035d005768cc8418b46d93971338f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd65f63bd0638582cecb50da912abb889') in 0.013100 seconds 
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.751 seconds
+Refreshing native plugins compatible for Editor in 15.02 ms, found 2 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  2.336 seconds
+Domain Reload Profiling:
+	ReloadAssembly (287ms)
+		BeginReloadAssembly (188ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (81ms)
+		LoadAllAssembliesAndSetupDomain (461ms)
+			LoadAssemblies (84ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (435ms)
+				TypeCache.Initialize (236ms)
+					TypeCache.ScanAssembly (231ms)
+				ResolveRequiredComponents (5ms)
+		FinalizeReload (0ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (0ms)
+			SetupLoadedEditorAssemblies (987ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (35ms)
+				SetLoadedEditorAssemblies (8ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (92ms)
+				ProcessInitializeOnLoadAttributes (600ms)
+				ProcessInitializeOnLoadMethodAttributes (238ms)
+				AfterProcessingInitializeOnLoad (12ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (13ms)
+Refreshing native plugins compatible for Editor in 32.04 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2591 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 101 unused Assets / (395.0 KB). Loaded Objects now: 3134.
+Memory consumption went from 436.1 MB to 435.7 MB.
+Total: 9.167700 ms (FindLiveObjects: 0.297600 ms CreateObjectMapping: 0.268900 ms MarkObjects: 8.207300 ms  DeleteObjects: 0.392700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.674 seconds
+Refreshing native plugins compatible for Editor in 14.27 ms, found 2 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.152 seconds
+Domain Reload Profiling:
+	ReloadAssembly (230ms)
+		BeginReloadAssembly (144ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (47ms)
+		LoadAllAssembliesAndSetupDomain (441ms)
+			LoadAssemblies (85ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (406ms)
+				TypeCache.Initialize (240ms)
+					TypeCache.ScanAssembly (235ms)
+				ResolveRequiredComponents (5ms)
+		FinalizeReload (0ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (0ms)
+			SetupLoadedEditorAssemblies (817ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (34ms)
+				SetLoadedEditorAssemblies (5ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (80ms)
+				ProcessInitializeOnLoadAttributes (503ms)
+				ProcessInitializeOnLoadMethodAttributes (188ms)
+				AfterProcessingInitializeOnLoad (8ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Refreshing native plugins compatible for Editor in 27.58 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2592 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 101 unused Assets / (402.3 KB). Loaded Objects now: 3137.
+Memory consumption went from 436.4 MB to 436.0 MB.
+Total: 13.160200 ms (FindLiveObjects: 0.318600 ms CreateObjectMapping: 0.353300 ms MarkObjects: 11.862600 ms  DeleteObjects: 0.624300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 

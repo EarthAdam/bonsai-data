@@ -32,6 +32,8 @@ The Bonsai Data project that originally started at the 2016 MIT Reality Virtuall
 3. Make sure `ParseList.cs` and `DirectoryScanner.cs` files are pointing to a file such as `Repos` like in the above code example
 4. Hit "Play" in Unity
 
+### NOTE: This isn't working because not all files in that Repo are gone. Sorry. I'll work to update this at some point
+
 
 # Force Directed Graphing
 
