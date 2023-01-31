@@ -7,6 +7,9 @@
 using System;
 using UnityEngine;
 using System.Collections;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 using UnityEngine.EventSystems;
 
 //add a menu to Component in Unity
@@ -14,47 +17,60 @@ using UnityEngine.EventSystems;
 
 public class SmoothOrbitCam : MonoBehaviour
 {
+
 	//transform to drag and drop the target object
+
 	public Transform target;
 
     //useable or not, used for viewchanger
+    [Space(50)]
     [HideInInspector]
     public bool useable = true;
+    [Space(5)]
 
+    [Header("ORBITING")]
     //enable orbiting. deactivate if you need a pan-only cam (i.e. strategy games etc.)
     public bool EnableOrbiting = true;
 
-    public enum OrbitKeyCode { MouseButton1 = 0, MouseButton2 = 1, MouseButton3 = 2, MouseButton4 = 3, MouseButton5 = 4, MouseButton6 = 5, MouseButton7 = 6, MouseButton8 = 7, Spacebar = 8 }
-    public OrbitKeyCode orbitKey = OrbitKeyCode.MouseButton1;
+    [Tooltip("Choose a key for orbiting. Default is Mouse1.")]
+    //the key for orbiting
+    public KeyCode orbitKey;
 
+    [Tooltip("Orbiting speed.")]
+    //add speed variables for orbiting speed
+    public float xSpeed = 10.0f;
+    public float ySpeed = 10.0f;
+
+    [Tooltip("The starting distance to the target object.")]
     //add the distance variable for zooming in and out with the mouse wheel
     public float distance = 5.0f;
     private float lerpDistance = 0;
 
-	//add speed variables for orbiting speed
-	public float xSpeed = 10.0f;
-	public float ySpeed = 10.0f;
+    [Tooltip("The limits for the zoom distance.")]
+    //add limits for the zoom distance
+    public float distanceMin = 3f;
+    public float distanceMax = 15f;
 
-	//enable or disable axes
-	public bool limitToXAxis = false;
+    [Tooltip("Limits the orbiting to the X or Y axis.")]
+    //enable or disable axes
+    public bool limitToXAxis = false;
 	public bool limitToYAxis = false;
 
-	//add limits for the rotation axes
-	public float yMinLimit = -20f;
+    [Tooltip("The limits for the rotation axes.")]
+    //add limits for the rotation axes
+    public float yMinLimit = -20f;
 	public float yMaxLimit = 80f;
 	public float xMinLimit = -360;
 	public float xMaxLimit = 360;
     private float storedLimit = 0;
-	
-	//add limits for the zoom distance
-	public float distanceMin = 3f;
-	public float distanceMax = 15f;
+    
 
-	//add the smoothing variable
-	public float smoothTime = 2f;
+    [Tooltip("The amount of smooth-out-effect.")]
+    //add the smoothing variable
+    public float smoothTime = 2f;
 
-	//define the rotation axes
-	float rotationYAxis = 0.0f;
+    //define the rotation axes
+    float rotationYAxis = 0.0f;
     float rotationXAxis = 0.0f;
     [HideInInspector]
     public Quaternion rotation;
@@ -65,43 +81,73 @@ public class SmoothOrbitCam : MonoBehaviour
     [HideInInspector]
     public float velocityY = 0.0f;
 
-	//zoom
-	public bool enableZooming = true;
-	//add a modifyer for zooming in and out (for both touch and mouse)
-	public float zoomSpeed = 1;
+    [Space(5)]
+    [Header("ZOOMING")]
+    [Tooltip("Zooming works via mouse wheel on desktop and 2-finger-pinch-gesture on mobile.")]
+    //zoom
+    public bool enableZooming = true;
+    //add a modifyer for zooming in and out (for both touch and mouse)
+    [Tooltip("The zooming speed.")]
+    public float zoomSpeed = 1;
 
-	//enable panning - for panning, the camera has to be assigned to target pan cam and the smoothorbitcam.cs script has to be on a parent object with the camera as child object!
-	public bool enablePanning = false;
+    [Space(5)]
+    [Header("PANNING")]
+    //enable panning - for panning, the camera has to be assigned to target pan cam and the smoothorbitcam.cs script has to be on a parent object with the camera as child object!
+    public bool enablePanning = false;
     [HideInInspector]
     public GameObject targetPanCam;
-	public enum PanKeycode { MouseButton1 = 0, MouseButton2 = 1, MouseButton3 = 2, MouseButton4 = 3, MouseButton5 = 4, MouseButton6 = 5, MouseButton7 = 6, MouseButton8 = 7, Spacebar = 8 }
-	public PanKeycode panKey = PanKeycode.MouseButton2;
-	public float panSpeed = 1;
+
+    [Tooltip("Choose a key for panning. Default is Mouse2.")]
+    public KeyCode panKey;
+
+    [Tooltip("Panning speed.")]
+    public float panSpeed = 1;
+    [Tooltip("Limit panning (Add invisible borders).")]
     public bool LimitPan = false;
+    [Tooltip("Enter the panning limits in units here if required.")]
     public Vector2 PanLimitsLeftRight;
     public Vector2 PanLimitsUpDown;
 
+    [Header("MISCELLANEOUS")]
+
+    [Tooltip("Offset to the center of the focus point (sometimes useful, if the pivot of a 3D-object is not centered).")]
     //add offset variables to get more control over the cam
     public float xOffset;
 	public float yOffset;
 
-	//automatic orbiting
-	public bool enableAutomaticOrbiting = false;
-	public float orbitingSpeed = 1f;
+    [Tooltip("Enables automatic orbiting.")]
+    //automatic orbiting
+    public bool enableAutomaticOrbiting = false;
+    [Tooltip("Automatic orbiting speed. Use negative values for opposite orbiting direction.")]
+    public float orbitingSpeed = 1f;
 
+    [Tooltip("If you want the camera to move in front of objects that are in the way to the target object, set this to true. Default value is false.")]
     //for objects that might be between the target object and the cam
     public bool NoObjectsBetween = false;
 
+    [Tooltip("Keeps the camera above the ground (beta).")]
     //the minimum distance the cam stays away from a possible ground (for RPGs, racing games, etc to keep the cam in a good position)
     public bool EnableGroundHovering = true;
     public float GroundHoverDistance = 5;
 
-	//if ui should block interaction with orbit cam
-	public bool UiBlocksInteraction = false;
+    [Tooltip("If you want UI Elements to block the orbiting camera interaction, set this to true.")]
+    //if ui should block interaction with orbit cam
+    public bool UiBlocksInteraction = false;
 	private bool uiBlocking = false;
+	
+	[Tooltip("Uncheck to freeze the cam also when Time.timeScale is set to 0")]
+	//if ui should block interaction with orbit cam
+	public bool ignoreTimeScale = true;
+	private float usedTime;
 
-	//temporary pan position and speed values
-	[HideInInspector]
+    [Header("INPUT")]
+    [Tooltip("Force the OrbitCam to use mouse or touch if i.e. your device is a desktop device but uses mobile controlling (touch)")]
+    public InputType InputSelection = InputType.AUTOMATIC;
+    public enum InputType { AUTOMATIC, MOUSE, TOUCH}
+    private bool useTouch = false;
+
+    //temporary pan position and speed values
+    [HideInInspector]
 	public Vector3 tempPanPosition;
 	[HideInInspector]
 	public float velocityPanX;
@@ -112,19 +158,18 @@ public class SmoothOrbitCam : MonoBehaviour
 
     //get the event system
     private EventSystem eventSystem;
-	
-	void Awake() {
-
-		switch(panKey) 
-		{
-            case PanKeycode.MouseButton1:
-                EnableOrbiting = false; //usually left mouse is used for orbiting, so if you select left mouse, orbiting will be deactivated to focus on pan
-                break;
-		}
-	}
+    
+    //store values for reset position option
+    private Vector3 resetPosition;
+    private Vector3 resetPan;
+    private float resetDist;
+    private Quaternion resetRotation;
 
 	void Start()
 	{
+        //checks if user forced input to mouse or touch
+	    CheckInput();
+
 		//define the angle vector3 and assign the axes
 		Vector3 angles = transform.eulerAngles;
 		rotationYAxis = angles.y;
@@ -150,8 +195,52 @@ public class SmoothOrbitCam : MonoBehaviour
         {
             eventSystem = EventSystem.current;
         }
-
+        StartCoroutine(DelayedStoreValues());
 	}
+
+	private IEnumerator DelayedStoreValues()
+	{
+		yield return new WaitForEndOfFrame();
+		//store reset values
+		resetPan = targetPanCam.transform.localPosition;
+		resetDist = distance;
+		resetRotation.eulerAngles = transform.rotation.eulerAngles;
+	}
+	
+	//call this to reset position
+	public void ResetPosition()
+	{
+		transform.rotation = resetRotation;
+		tempPanPosition = resetPan;
+		targetPanCam.transform.localPosition = resetPan;
+		distance = resetDist;
+		ResetValues();
+	}
+
+    private void CheckInput()
+    {
+        if (InputSelection == InputType.AUTOMATIC)
+        {
+#if (UNITY_EDITOR || UNITY_STANDALONE || UNITY_WEBPLAYER || UNITY_WEBGL)
+            useTouch = false;
+#endif
+#if ((UNITY_ANDROID || UNITY_IOS || UNITY_WP8 || UNITY_WP8_1) && !UNITY_EDITOR)
+            useTouch = true;
+#endif
+        }
+        else
+        {
+            switch (InputSelection)
+            {
+                    case InputType.MOUSE:
+                    useTouch = false;
+                    break;
+                    case InputType.TOUCH:
+                    useTouch = true;
+                    break;
+            }
+        }
+    }
 
     //to get the current rotation before normal orbit cam mode is active again
     public void ResetValues()
@@ -223,143 +312,128 @@ public class SmoothOrbitCam : MonoBehaviour
 		//only if the target exists/is assigned, perform the orbit
 		if (target)
 		{
-#if (UNITY_EDITOR || UNITY_STANDALONE || UNITY_WEBPLAYER || UNITY_WEBGL)
-            //ORBIT
-
-            //define keycodes for orbiting
-            if (orbitKey == OrbitKeyCode.MouseButton1)
-            {
-                if (Input.GetMouseButton(0)) { doOrbit = true;}else{doOrbit = false;}
-            }
-            if (orbitKey == OrbitKeyCode.MouseButton2)
-            {
-                if (Input.GetMouseButton(1)) { doOrbit = true; } else { doOrbit = false; }
-            }
-            if (orbitKey == OrbitKeyCode.MouseButton3)
-            {
-                if (Input.GetMouseButton(2)) { doOrbit = true; } else { doOrbit = false; }
-            }
-            if (orbitKey == OrbitKeyCode.MouseButton4)
-            {
-                if (Input.GetMouseButton(3)) { doOrbit = true; } else { doOrbit = false; }
-            }
-            if (orbitKey == OrbitKeyCode.MouseButton5)
-            {
-                if (Input.GetMouseButton(4)) { doOrbit = true; } else { doOrbit = false; }
-            }
-            if (orbitKey == OrbitKeyCode.MouseButton6)
-            {
-                if (Input.GetMouseButton(5)) { doOrbit = true; } else { doOrbit = false; }
-            }
-            if (orbitKey == OrbitKeyCode.MouseButton7)
-            {
-                if (Input.GetMouseButton(6)) { doOrbit = true; } else { doOrbit = false; }
-            }
-            if (orbitKey == OrbitKeyCode.MouseButton8)
-            {
-                if (Input.GetMouseButton(7)) { doOrbit = true; } else { doOrbit = false; }
-            }
-            if (orbitKey == OrbitKeyCode.Spacebar)
-            {
-                if (Input.GetKey("space")) { doOrbit = true; } else { doOrbit = false; }
-            }
-
-            //for mouse/web/standalone
-            if (doOrbit)
-			{
-				if (UiBlocksInteraction)
-				{
-					if (!uiBlocking)
-					{
-						//on mouse down, calculate the orbital velocity with the given speed values and the axes
-						if (!limitToXAxis)
-							velocityX += xSpeed * Input.GetAxis("Mouse X") * 0.2f;
-						if (!limitToYAxis)
-							velocityY += ySpeed * Input.GetAxis("Mouse Y") * 0.2f;
-					}
-				}
-				else
-				{
-					//on mouse down, calculate the orbital velocity with the given speed values and the axes
-					if (!limitToXAxis)
-						velocityX += xSpeed * Input.GetAxis("Mouse X") * 0.2f;
-					if (!limitToYAxis)
-						velocityY += ySpeed * Input.GetAxis("Mouse Y") * 0.2f;
-				}
-
-			}
+			usedTime = ignoreTimeScale ? Time.unscaledDeltaTime : Time.deltaTime;
 			
-			//ZOOM
-			//calculate the distance by checking the mouse scroll an clamp the value to the set distance limits
-            if (enableZooming)
-            {
-                distance = Mathf.Clamp(distance - Input.GetAxis("Mouse ScrollWheel") * zoomSpeed * 5, distanceMin, distanceMax);
-            }
+		    if (!useTouch)
+		    {
+		        //ORBIT
 
-#endif
-#if ((UNITY_ANDROID || UNITY_IOS || UNITY_WP8 || UNITY_WP8_1) && !UNITY_EDITOR)
-			//ORBIT
-			if(Input.touchCount == 1)
-			{
-				if (UiBlocksInteraction)
-				{
-					if (!uiBlocking)
-					{
-						//on touch down calculate the velocities from the input touch position and the modifyers
-						if (!limitToXAxis)
-							velocityX += xSpeed * Input.GetTouch (0).deltaPosition.x * (Time.deltaTime / (Input.GetTouch(0).deltaTime+0.001f)) * 0.01f;
-						if (!limitToYAxis)
-							velocityY += ySpeed * Input.GetTouch (0).deltaPosition.y * (Time.deltaTime / (Input.GetTouch(0).deltaTime+0.001f)) * 0.01f;
-					}
-				} 
-				else
-				{
-					//on touch down calculate the velocities from the input touch position and the modifyers
-					if (!limitToXAxis)
-						velocityX += xSpeed * Input.GetTouch (0).deltaPosition.x * (Time.deltaTime / (Input.GetTouch(0).deltaTime+0.001f)) * 0.01f;
-					if (!limitToYAxis)
-						velocityY += ySpeed * Input.GetTouch (0).deltaPosition.y * (Time.deltaTime / (Input.GetTouch(0).deltaTime+0.001f)) * 0.01f;
-				}
-			}
-			
-			//ZOOM
-			//zooming with tapping / 2 finger gesture
-			if (Input.touchCount == 2)
-			{
-				// Store both touches.
-				Touch touchZero = Input.GetTouch(0);
-				Touch touchOne = Input.GetTouch(1);
-				
-				// Find the position in the previous frame of each touch.
-				Vector2 touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
-				Vector2 touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
-				
-				// Find the magnitude of the vector (the distance) between the touches in each frame.
-				float prevTouchDeltaMag = (touchZeroPrevPos - touchOnePrevPos).magnitude;
-				float touchDeltaMag = (touchZero.position - touchOne.position).magnitude;
-				
-				// Find the difference in the distances between each frame.
-				float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
-				
-				//distance calculation for mobile/touch
-				if (enableZooming)
-				{
-					if (UiBlocksInteraction)
-					{
-						if (!uiBlocking)
-						{
-							distance = Mathf.Lerp(distance,Mathf.Clamp(distance + deltaMagnitudeDiff*100000*zoomSpeed, distanceMin, distanceMax),Time.deltaTime*smoothTime*0.1f*zoomSpeed); //FIXME
-						}
-					}
-					else
-					{
-						distance = Mathf.Lerp(distance,Mathf.Clamp(distance + deltaMagnitudeDiff*100000*zoomSpeed, distanceMin, distanceMax),Time.deltaTime*smoothTime*0.1f*zoomSpeed); //FIXME
-					}
-				}
-			}
-#endif
+		        //define keycodes for orbiting
+		        if (Input.GetKey(orbitKey))
+		        {
+		            doOrbit = true;
+		        }
+		        else
+		        {
+		            doOrbit = false;
+		        }
 
-            //give the calculated values to the rotation axes
+		        //for mouse/web/standalone
+		        if (doOrbit)
+		        {
+		            if (UiBlocksInteraction)
+		            {
+		                if (!uiBlocking)
+		                {
+		                    //on mouse down, calculate the orbital velocity with the given speed values and the axes
+		                    if (!limitToXAxis)
+		                        velocityX += xSpeed * Input.GetAxis("Mouse X") * 0.2f;
+		                    if (!limitToYAxis)
+		                        velocityY += ySpeed * Input.GetAxis("Mouse Y") * 0.2f;
+		                }
+		            }
+		            else
+		            {
+		                //on mouse down, calculate the orbital velocity with the given speed values and the axes
+		                if (!limitToXAxis)
+		                    velocityX += xSpeed * Input.GetAxis("Mouse X") * 0.2f;
+		                if (!limitToYAxis)
+		                    velocityY += ySpeed * Input.GetAxis("Mouse Y") * 0.2f;
+		            }
+
+		        }
+
+		        //ZOOM
+		        //calculate the distance by checking the mouse scroll an clamp the value to the set distance limits
+		        if (enableZooming)
+		        {
+		            distance = Mathf.Clamp(distance - Input.GetAxis("Mouse ScrollWheel") * zoomSpeed * 5, distanceMin,
+		                distanceMax);
+		        }
+
+		    }
+		    if (useTouch)
+		    {
+		        //ORBIT
+		        if (Input.touchCount == 1)
+		        {
+		            if (UiBlocksInteraction)
+		            {
+		                if (!uiBlocking)
+		                {
+		                    //on touch down calculate the velocities from the input touch position and the modifyers
+		                    if (!limitToXAxis)
+		                        velocityX += xSpeed * Input.GetTouch(0).deltaPosition.x *
+		                                     (usedTime / (Input.GetTouch(0).deltaTime + 0.001f)) * 0.01f;
+		                    if (!limitToYAxis)
+		                        velocityY += ySpeed * Input.GetTouch(0).deltaPosition.y *
+		                                     (usedTime / (Input.GetTouch(0).deltaTime + 0.001f)) * 0.01f;
+		                }
+		            }
+		            else
+		            {
+		                //on touch down calculate the velocities from the input touch position and the modifyers
+		                if (!limitToXAxis)
+		                    velocityX += xSpeed * Input.GetTouch(0).deltaPosition.x *
+		                                 (usedTime / (Input.GetTouch(0).deltaTime + 0.001f)) * 0.01f;
+		                if (!limitToYAxis)
+		                    velocityY += ySpeed * Input.GetTouch(0).deltaPosition.y *
+		                                 (usedTime / (Input.GetTouch(0).deltaTime + 0.001f)) * 0.01f;
+		            }
+		        }
+
+		        //ZOOM
+		        //zooming with tapping / 2 finger gesture
+		        if (Input.touchCount == 2)
+		        {
+		            // Store both touches.
+		            Touch touchZero = Input.GetTouch(0);
+		            Touch touchOne = Input.GetTouch(1);
+
+		            // Find the position in the previous frame of each touch.
+		            Vector2 touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
+		            Vector2 touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
+
+		            // Find the magnitude of the vector (the distance) between the touches in each frame.
+		            float prevTouchDeltaMag = (touchZeroPrevPos - touchOnePrevPos).magnitude;
+		            float touchDeltaMag = (touchZero.position - touchOne.position).magnitude;
+
+		            // Find the difference in the distances between each frame.
+		            float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
+
+		            //distance calculation for mobile/touch
+		            if (enableZooming)
+		            {
+		                if (UiBlocksInteraction)
+		                {
+		                    if (!uiBlocking)
+		                    {
+		                        distance = Mathf.Lerp(distance,
+		                            Mathf.Clamp(distance + deltaMagnitudeDiff * 100000 * zoomSpeed, distanceMin, distanceMax),
+		                            usedTime * smoothTime * 0.1f * zoomSpeed); //FIXME
+		                    }
+		                }
+		                else
+		                {
+		                    distance = Mathf.Lerp(distance,
+		                        Mathf.Clamp(distance + deltaMagnitudeDiff * 100000 * zoomSpeed, distanceMin, distanceMax),
+		                        usedTime * smoothTime * 0.1f * zoomSpeed); //FIXME
+		                }
+		            }
+		        }
+		    }
+
+		    //give the calculated values to the rotation axes
             rotationYAxis += velocityX;
 			rotationXAxis -= velocityY;
 
@@ -378,103 +452,56 @@ public class SmoothOrbitCam : MonoBehaviour
             }
 
             //PAN SETTINGS 
-#if (UNITY_EDITOR || UNITY_STANDALONE || UNITY_WEBPLAYER || UNITY_WEBGL)
-            //right mouseclick (or selected other keycode) for panning in non-mobile applications
+		    if (!useTouch)
+		    {
+		        //right mouseclick (or selected other keycode) for panning in non-mobile applications
 
-            //define keycodes for panning
-            if (panKey == PanKeycode.MouseButton1 & useable)
-            {
-                if (Input.GetMouseButton(0) && enablePanning)
-                {
-                    CalcPan();
-                }
-            }
-            if (panKey == PanKeycode.MouseButton2 && useable)
-			{
-				if (Input.GetMouseButton (1) && enablePanning) 
-				{
-                    CalcPan();
-				}
-			}
-			if (panKey == PanKeycode.MouseButton3 && useable)
-			{
-				if (Input.GetMouseButton (2) && enablePanning) 
-				{
-                    CalcPan();
-                }
-			}
-            if (panKey == PanKeycode.MouseButton4 & useable)
-            {
-                if (Input.GetMouseButton(3) && enablePanning)
-                {
-                    CalcPan();
-                }
-            }
-            if (panKey == PanKeycode.MouseButton5 & useable)
-            {
-                if (Input.GetMouseButton(4) && enablePanning)
-                {
-                    CalcPan();
-                }
-            }
-            if (panKey == PanKeycode.MouseButton6 & useable)
-            {
-                if (Input.GetMouseButton(5) && enablePanning)
-                {
-                    CalcPan();
-                }
-            }
-            if (panKey == PanKeycode.MouseButton7 & useable)
-            {
-                if (Input.GetMouseButton(6) && enablePanning)
-                {
-                    CalcPan();
-                }
-            }
-            if (panKey == PanKeycode.MouseButton8 & useable)
-            {
-                if (Input.GetMouseButton(7) && enablePanning)
-                {
-                    CalcPan();
-                }
-            }
-            if (panKey == PanKeycode.Spacebar && useable)
-			{
-				if (Input.GetKey("space") && enablePanning) 
-				{
-                    CalcPan(); 
-                }
-			}
-#endif
-#if ((UNITY_ANDROID || UNITY_IOS || UNITY_WP8 || UNITY_WP8_1) || UNITY_EDITOR)
-			//for touch:
-			if (Input.touchCount == 2 && enablePanning && useable && (panKey != PanKeycode.MouseButton1)) 
-			{
-				
-				//on touch down calculate the velocities from the input touch position and the modifyers
-				float tempVeloXa = panSpeed * Input.GetTouch (0).deltaPosition.x * (Time.deltaTime / (Input.GetTouch(0).deltaTime+0.001f)) * 0.05f;
-				float tempVeloXb = panSpeed * Input.GetTouch (1).deltaPosition.x * (Time.deltaTime / (Input.GetTouch(0).deltaTime+0.001f)) * 0.05f;
-				float tempVeloYa = panSpeed * Input.GetTouch (0).deltaPosition.y * (Time.deltaTime / (Input.GetTouch(0).deltaTime+0.001f)) * 0.05f;
-				float tempVeloYb = panSpeed * Input.GetTouch (1).deltaPosition.y * (Time.deltaTime / (Input.GetTouch(0).deltaTime+0.001f)) * 0.05f;
-				
-				float veloDeltaX = (tempVeloXa + tempVeloXb) / 2;
-				float veloDeltaY = (tempVeloYa + tempVeloYb) / 2;
+		        //define keycodes for panning
+		        if (useable)
+		        {
+		            if (Input.GetKey(panKey) && enablePanning)
+		            {
+		                CalcPan();
+		            }
+		        }
 
-                CalcPanMobile(veloDeltaX,veloDeltaY);
-            }
-            //if "left-mouse" is selected, disable orbiting and use touch to pan on mobile
-            if (Input.touchCount == 1 && enablePanning && useable && panKey == PanKeycode.MouseButton1)
-            {
-                float veloDeltaX = panSpeed * Input.GetTouch(0).deltaPosition.x * (Time.deltaTime / (Input.GetTouch(0).deltaTime + 0.001f)) * 0.05f;
-                float veloDeltaY = panSpeed * Input.GetTouch(0).deltaPosition.y * (Time.deltaTime / (Input.GetTouch(0).deltaTime + 0.001f)) * 0.05f;
+		    }
+		    if (useTouch)
+		    {
+		        //for touch:
+		        if (Input.touchCount == 2 && enablePanning && useable && panKey != KeyCode.Mouse0)
+		        {
 
-                CalcPanMobile(veloDeltaX,veloDeltaY);
-            }
-#endif
+		            //on touch down calculate the velocities from the input touch position and the modifyers
+		            float tempVeloXa = panSpeed * Input.GetTouch(0).deltaPosition.x *
+		                               (usedTime / (Input.GetTouch(0).deltaTime + 0.001f)) * 0.05f;
+		            float tempVeloXb = panSpeed * Input.GetTouch(1).deltaPosition.x *
+		                               (usedTime / (Input.GetTouch(0).deltaTime + 0.001f)) * 0.05f;
+		            float tempVeloYa = panSpeed * Input.GetTouch(0).deltaPosition.y *
+		                               (usedTime / (Input.GetTouch(0).deltaTime + 0.001f)) * 0.05f;
+		            float tempVeloYb = panSpeed * Input.GetTouch(1).deltaPosition.y *
+		                               (usedTime / (Input.GetTouch(0).deltaTime + 0.001f)) * 0.05f;
+
+		            float veloDeltaX = (tempVeloXa + tempVeloXb) / 2;
+		            float veloDeltaY = (tempVeloYa + tempVeloYb) / 2;
+
+		            CalcPanMobile(veloDeltaX, veloDeltaY);
+		        }
+		        //if "left-mouse" is selected, disable orbiting and use touch to pan on mobile
+		        if (Input.touchCount == 1 && enablePanning && useable && panKey == KeyCode.Mouse0)
+		        {
+		            float veloDeltaX = panSpeed * Input.GetTouch(0).deltaPosition.x *
+		                               (usedTime / (Input.GetTouch(0).deltaTime + 0.001f)) * 0.05f;
+		            float veloDeltaY = panSpeed * Input.GetTouch(0).deltaPosition.y *
+		                               (usedTime / (Input.GetTouch(0).deltaTime + 0.001f)) * 0.05f;
+
+		            CalcPanMobile(veloDeltaX, veloDeltaY);
+		        }
+		    }
 
 
 
-            //include a raycast for potential other objects (between the target and the cam) obscuring the view
+		    //include a raycast for potential other objects (between the target and the cam) obscuring the view
 
             if (NoObjectsBetween)
             {
@@ -488,7 +515,7 @@ public class SmoothOrbitCam : MonoBehaviour
                     {
                         tempDistance = distanceMin;
                     }
-                    distance = Mathf.Lerp(distance, tempDistance, Time.deltaTime * smoothTime * 0.5f);
+                    distance = Mathf.Lerp(distance, tempDistance, usedTime * smoothTime * 0.5f);
                 }
             }
 
@@ -518,7 +545,7 @@ public class SmoothOrbitCam : MonoBehaviour
             if (target != null)
             {
                 //lerp the distance
-                lerpDistance = Mathf.Lerp(lerpDistance, distance, smoothTime * Time.deltaTime);
+                lerpDistance = Mathf.Lerp(lerpDistance, distance, smoothTime * usedTime);
 
                 //create the inverted distance to move the cam away from the object
                 Vector3 negDistance = new Vector3(0.0f, 0.0f, -lerpDistance);
@@ -535,12 +562,12 @@ public class SmoothOrbitCam : MonoBehaviour
 			//orbiting mode
 			if (enableAutomaticOrbiting == true)
 			{
-				velocityX = Mathf.Lerp(velocityX,orbitingSpeed, Time.deltaTime * smoothTime);
+				velocityX = Mathf.Lerp(velocityX,orbitingSpeed, usedTime * smoothTime);
 			}
 
             //assign the smoothing effect to the velocity with lerp
-            velocityX = Mathf.Lerp(velocityX, 0, Time.deltaTime * smoothTime);
-            velocityY = Mathf.Lerp(velocityY, 0, Time.deltaTime * smoothTime);
+            velocityX = Mathf.Lerp(velocityX, 0, usedTime * smoothTime);
+            velocityY = Mathf.Lerp(velocityY, 0, usedTime * smoothTime);
 
             //panning
             tempPanPosition = new Vector3(-velocityPanX * distance / 10, -velocityPanY * distance / 10, 0);
@@ -548,7 +575,7 @@ public class SmoothOrbitCam : MonoBehaviour
             //apply panning
             if (targetPanCam != null && useable && enablePanning)
             {
-                targetPanCam.transform.localPosition = Vector3.Lerp(targetPanCam.transform.localPosition, tempPanPosition, Time.deltaTime * smoothTime * 1.5f);
+                targetPanCam.transform.localPosition = Vector3.Lerp(targetPanCam.transform.localPosition, tempPanPosition, usedTime * smoothTime * 1.5f);
                 //pan limitations
                 if (LimitPan) 
                 {
@@ -558,6 +585,5 @@ public class SmoothOrbitCam : MonoBehaviour
                 }
             }
 		}
-
 	}
 }

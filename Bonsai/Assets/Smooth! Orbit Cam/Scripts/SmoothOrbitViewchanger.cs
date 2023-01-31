@@ -10,16 +10,15 @@ using UnityEngine.EventSystems;
 public class SmoothOrbitViewchanger : MonoBehaviour, IPointerUpHandler {
 
     //the data for the viewchange: enter in inspector
-    public Vector3 Rotation;
+    public Vector3 CamRotation;
 
     private Quaternion RotaQuat;
-    public float Distance;
+    public float CamDistance;
 
-    public Vector2 PanValues;
-
+    public Vector2 CamPanValues;
 
     //speed
-    public float speed = 1;
+    public float CamMovingSpeed = 1;
 
     //to get the camera control script
     private SmoothOrbitCam smoothOrbitCam;
@@ -27,25 +26,32 @@ public class SmoothOrbitViewchanger : MonoBehaviour, IPointerUpHandler {
     //movement bool
     private bool moving = false;
 
+    private Transform tempTarget;
+
 	void Start ()
     {
         //get camera system
         smoothOrbitCam = FindObjectOfType<SmoothOrbitCam>().gameObject.GetComponent<SmoothOrbitCam>();
-        RotaQuat.eulerAngles = Rotation;
+        RotaQuat.eulerAngles = CamRotation;
 
         //apply speed
-        speed = speed / 10;
-	}
+        CamMovingSpeed = CamMovingSpeed / 10;
+
+
+    }
 	
 
 	void Update ()
     {
         if (moving)
         {
-            //get origin values//lerp to target values
-            Quaternion rot = Quaternion.Lerp(smoothOrbitCam.transform.rotation,RotaQuat, speed);
-            float dis = Mathf.Lerp(smoothOrbitCam.distance, Distance,speed);
-            Vector3 pan = Vector3.Lerp(smoothOrbitCam.targetPanCam.transform.localPosition,new Vector3(PanValues.x,PanValues.y,0), speed);
+            tempTarget.position = Vector3.Lerp(tempTarget.position, transform.position, CamMovingSpeed);
+
+
+            //            get origin values//lerp to target values
+            Quaternion rot = Quaternion.Lerp(smoothOrbitCam.transform.rotation,RotaQuat, CamMovingSpeed);
+            float dis = Mathf.Lerp(smoothOrbitCam.distance, CamDistance, CamMovingSpeed);
+            Vector3 pan = Vector3.Lerp(smoothOrbitCam.targetPanCam.transform.localPosition,new Vector3(CamPanValues.x, CamPanValues.y,0), CamMovingSpeed);
             rot.eulerAngles = new Vector3(rot.eulerAngles.x, rot.eulerAngles.y, 0);
 
             smoothOrbitCam.rotation = rot;
@@ -56,15 +62,19 @@ public class SmoothOrbitViewchanger : MonoBehaviour, IPointerUpHandler {
 
     public void OnPointerUp(PointerEventData e)
     {
-        StartCoroutine(ViewChange());
+        StartCoroutine(ViewChange()); 
     }
 
     void OnMouseUp()
     {
+        if (smoothOrbitCam.UiBlocksInteraction && EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+        {
+           return;
+        }
         StartCoroutine(ViewChange());
     }
 
-    public void TriggerViewChange() //if the viewchange should be called from code somewhere
+    public void TriggerViewChange() //if the viewchange should be called from code or from a UI button somewhere
     {
         StartCoroutine(ViewChange());
     }
@@ -74,12 +84,27 @@ public class SmoothOrbitViewchanger : MonoBehaviour, IPointerUpHandler {
         //clean existing cam system values
         //smoothOrbitCam.ResetValues();
 
+        if (GameObject.Find("TemporarySmoothOrbitCamTarget") == true) yield break;
+
         //perform
         moving = true;
         smoothOrbitCam.useable = false;
 
+        GameObject go = new GameObject();
+        go.name = "TemporarySmoothOrbitCamTarget";
+
+        tempTarget = go.transform;
+        tempTarget.position = smoothOrbitCam.target.transform.position;
+        //switch target
+        smoothOrbitCam.target = tempTarget;
+
         //wait for the movement to finish
         yield return new WaitForSeconds(1.2f);
+
+        //switch target
+        smoothOrbitCam.target = transform;
+
+        Destroy(go);
 
         //stop performing
         moving = false;
@@ -87,7 +112,7 @@ public class SmoothOrbitViewchanger : MonoBehaviour, IPointerUpHandler {
 
         //overwrite existing values
         //avoid reset of the pan value after viewchange
-        smoothOrbitCam.tempPanPosition = PanValues;
+        smoothOrbitCam.tempPanPosition = CamPanValues;
         //clean values again to give them free for the normal controls again
         smoothOrbitCam.ResetValues();
     }
