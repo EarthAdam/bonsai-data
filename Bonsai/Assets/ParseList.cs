@@ -26,7 +26,7 @@ public class ParseList : MonoBehaviour
   }
   void ParseTxtFile(string m)
   {
-    string text = File.ReadAllText("Repos/"+m + ".txt");
+    string text = File.ReadAllText("Assets/Bonsai Code/out.txt");     //Run `ls -s -R > out.txt` from CMD for repo to scan
     char[] separators = { ',', ';', '|', '\n' };
     strValues = text.Split(separators);
     GameObject seed = new GameObject();
